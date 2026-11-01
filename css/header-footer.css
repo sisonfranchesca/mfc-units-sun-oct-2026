@@ -1,0 +1,352 @@
+/* Franchesca Zyreen Sison (MFC Units - October 2026) */
+
+/* the * means "everything on the page", this resets the default browser spacing so all pages start the same */
+* {
+    margin: 0; /* removes the default outside space of every element */
+    padding: 0; /* removes the default inside space of every element */
+    box-sizing: border-box; /* padding and border are counted inside the width, so boxes do not get bigger than I set */
+}
+
+/* body = the whole page */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* the default font of the whole website */
+    background-color: #ffffff; /* white background */
+    color: #333333; /* the default text color (dark gray) */
+}
+
+/* site header = the top bar with the logo and menu */
+.site-header {
+    position: sticky; /* the header stays at the top while you scroll down */
+    top: 0; /* sticks to the very top of the screen */
+    z-index: 1000; /* layer order, a big number makes sure the header is on top of everything else */
+    background-color: #ffffff; /* white background so the content under it cannot be seen when scrolling */
+    width: 100%; /* full width of the screen */
+}
+
+/* the box that holds the logo and the menu */
+.header-container {
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto; /* centered */
+    display: flex; /* turns on flexbox so the logo and menu are side by side */
+    justify-content: space-between; /* logo on the far left, menu on the far right */
+    align-items: center; /* lines them up in the middle (up and down) */
+    padding: 15px 25px; /* space inside: 15px up and down, 25px left and right */
+}
+
+/* brand = the logo and the name "MFC UNITS" on the left */
+.brand-link {
+    display: flex; /* puts the logo and the name side by side */
+    align-items: center; /* lines them up in the middle */
+    gap: 15px; /* space between the logo and the name */
+    text-decoration: none; /* removes the underline from the link */
+}
+
+/* the logo picture in the header */
+.header-logo {
+    height: 50px; /* how tall the logo is */
+    width: auto; /* width follows the height so the logo is not stretched */
+    object-fit: contain; /* the whole logo is shown without being cut */
+}
+
+/* the name "MFC UNITS" beside the logo */
+.brand-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the name */
+    font-size: 1.6rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    letter-spacing: 1.5px; /* space between each letter */
+}
+
+/* the menu on computers */
+.main-nav {
+    display: flex; /* turns on flexbox */
+    align-items: center; /* centers the menu up and down */
+}
+
+/* the list of menu links */
+.nav-list {
+    display: flex; /* puts the links in one row */
+    list-style: none; /* removes the default bullet dots */
+    gap: 25px; /* space between the links */
+    margin: 0; /* no outside space */
+    padding: 0; /* no inside space */
+}
+
+/* each menu link (HOME, ABOUT US, etc.) */
+.nav-link {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the links */
+    font-size: 0.85rem; /* text size */
+    font-weight: 400; /* normal, not bold */
+    color: #655168; /* purple text */
+    text-decoration: none; /* removes the underline from the link */
+    text-transform: uppercase; /* makes all letters big */
+    letter-spacing: 0.8px; /* space between each letter */
+    position: relative; /* needed so the line under the link (::after) can be placed inside it */
+    padding-bottom: 6px; /* space under the text where the line sits */
+    transition: transform 0.2s ease, color 0.2s ease; /* smooth hover effect */
+    display: inline-block; /* so padding and the hover size change work on the link */
+}
+
+/* the line under each menu link, it is see-through until hover or active */
+.nav-link::after {
+    content: ''; /* ::after needs this to show up, empty because it is only a line */
+    position: absolute; /* lets me place the line exactly */
+    bottom: 0; /* at the bottom of the link */
+    left: 0; /* starts from the left of the link */
+    width: 100%; /* as wide as the link */
+    height: 3px; /* how thick the line is */
+    background-color: transparent; /* no color at first, so you cannot see it */
+    transition: background-color 0.2s ease; /* smooth color change */
+}
+
+/* when the mouse is over a menu link (all links get a little bigger) */
+.nav-link:hover {
+    transform: scale(1.08); /* gets a little bigger */
+}
+
+/* hover colors, each page has its own color. [data-page="home"] means "the link that has data-page=home in the html" */
+.nav-link[data-page="home"]:hover { color: #b0a0ba; } /* HOME text turns light purple */
+.nav-link[data-page="home"]:hover::after { background-color: #b0a0ba; } /* HOME line shows light purple */
+
+.nav-link[data-page="about"]:hover { color: #a5ae95; } /* ABOUT US text turns sage green */
+.nav-link[data-page="about"]:hover::after { background-color: #a5ae95; } /* ABOUT US line shows sage green */
+
+.nav-link[data-page="unit"]:hover { color: #c4a891; } /* UNIT text turns light brown */
+.nav-link[data-page="unit"]:hover::after { background-color: #c4a891; } /* UNIT line shows light brown */
+
+.nav-link[data-page="location"]:hover { color: #b0a0ba; } /* LOCATION text turns light purple */
+.nav-link[data-page="location"]:hover::after { background-color: #b0a0ba; } /* LOCATION line shows light purple */
+
+.nav-link[data-page="guidelines"]:hover { color: #a5ae95; } /* GUIDELINES text turns sage green */
+.nav-link[data-page="guidelines"]:hover::after { background-color: #a5ae95; } /* GUIDELINES line shows sage green */
+
+.nav-link[data-page="faqs"]:hover { color: #c4a891; } /* FAQs text turns light brown */
+.nav-link[data-page="faqs"]:hover::after { background-color: #c4a891; } /* FAQs line shows light brown */
+
+/* the link of the page you are on now (script.js adds the "active" class to it) */
+.nav-link.active {
+    font-weight: 700; /* bold, so you know which page you are on */
+}
+
+/* active colors, same colors as the hover ones so the page you are on always stays colored */
+.nav-link[data-page="home"].active { color: #b0a0ba; } /* HOME text is light purple when on the home page */
+.nav-link[data-page="home"].active::after { background-color: #b0a0ba; } /* HOME line is light purple */
+
+.nav-link[data-page="about"].active { color: #a5ae95; } /* ABOUT US text is sage green when on the about page */
+.nav-link[data-page="about"].active::after { background-color: #a5ae95; } /* ABOUT US line is sage green */
+
+.nav-link[data-page="unit"].active { color: #c4a891; } /* UNIT text is light brown when on the unit page */
+.nav-link[data-page="unit"].active::after { background-color: #c4a891; } /* UNIT line is light brown */
+
+.nav-link[data-page="location"].active { color: #b0a0ba; } /* LOCATION text is light purple when on the location page */
+.nav-link[data-page="location"].active::after { background-color: #b0a0ba; } /* LOCATION line is light purple */
+
+.nav-link[data-page="guidelines"].active { color: #a5ae95; } /* GUIDELINES text is sage green when on the guidelines page */
+.nav-link[data-page="guidelines"].active::after { background-color: #a5ae95; } /* GUIDELINES line is sage green */
+
+.nav-link[data-page="faqs"].active { color: #c4a891; } /* FAQs text is light brown when on the FAQs page */
+.nav-link[data-page="faqs"].active::after { background-color: #c4a891; } /* FAQs line is light brown */
+
+/* the dark purple line under the header */
+.header-divider {
+    height: 4px; /* how thick the line is */
+    background-color: #5f4862; /* dark purple */
+    width: 100%; /* full width */
+}
+
+/* the hamburger button (the 3 lines), it is hidden on computers and only shows on phones */
+.hamburger {
+    display: none; /* hidden for now (the phone rules at the bottom show it) */
+    flex-direction: column; /* stacks the 3 lines top to bottom */
+    justify-content: space-between; /* spreads the 3 lines evenly from top to bottom */
+    width: 28px; /* button width */
+    height: 20px; /* button height */
+    background: transparent; /* no background */
+    border: none; /* removes the default button border */
+    cursor: pointer; /* the mouse turns into a hand when over it */
+    padding: 0; /* no space inside */
+}
+
+/* each of the 3 lines inside the hamburger */
+.hamburger span {
+    width: 100%; /* as wide as the button */
+    height: 3px; /* how thick each line is */
+    background-color: #655168; /* purple lines */
+    border-radius: 2px; /* tiny rounded ends */
+    transition: all 0.3s ease; /* smooth change if I animate it later */
+}
+
+/* site footer = the bottom part of every page */
+.site-footer {
+    background-color: #ffffff; /* white background */
+    width: 100%; /* full width */
+    margin-top: auto; /* pushes the footer down, but this only works if the body is flexbox (right now it does nothing, it is harmless) */
+}
+
+/* the dark purple line on top of the footer */
+.footer-top-divider {
+    height: 4px; /* how thick the line is */
+    background-color: #5f4862; /* dark purple */
+    width: 100%; /* full width */
+}
+
+/* the box that holds the 3 columns (disclaimer, logo, contact) */
+.footer-container {
+    max-width: 950px; /* not wider than 950px so the columns stay close to the logo */
+    margin: 0 auto; /* centered */
+    padding: 16px 20px; /* space inside: 16px up and down, 20px left and right */
+    display: flex; /* puts the 3 columns in one row */
+    justify-content: center; /* everything in the middle */
+    align-items: center; /* lines them up in the middle (up and down) */
+    gap: 35px; /* space between the columns */
+}
+
+/* the 2 text columns (left and right) */
+.footer-column {
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the heading and text top to bottom */
+    gap: 6px; /* space between the heading and text */
+    width: 280px; /* each column is 280px wide */
+}
+
+/* left column, text is aligned to the RIGHT so it sits close to the logo */
+.footer-column.left {
+    text-align: right; /* text starts from the right side */
+}
+
+/* right column, text is aligned to the LEFT so it sits close to the logo */
+.footer-column.right {
+    text-align: left; /* text starts from the left side */
+}
+
+/* footer headings (DISCLAIMER, CONTACT US) */
+.footer-heading {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the heading */
+    font-size: 0.85rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    letter-spacing: 1.2px; /* space between each letter */
+    text-transform: uppercase; /* makes all letters big */
+}
+
+/* footer paragraphs */
+.footer-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 0.75rem; /* small text size */
+    color: #655168; /* purple text */
+    line-height: 1.5; /* space between lines */
+}
+
+/* the middle column that holds the logo */
+.footer-logo-col {
+    display: flex; /* turns on flexbox */
+    justify-content: center; /* logo in the middle (left and right) */
+    align-items: center; /* logo in the middle (up and down) */
+    flex-shrink: 0; /* the logo column does not get squished */
+}
+
+/* the logo picture in the footer */
+.footer-logo {
+    height: 85px; /* how tall the logo is */
+    width: auto; /* width follows the height so the logo is not stretched */
+    object-fit: contain; /* the whole logo is shown without being cut */
+}
+
+/* the light purple line between the columns and the copyright */
+.footer-mid-divider {
+    height: 3px; /* how thick the line is */
+    background-color: #b0a0ba; /* light purple */
+    width: 100%; /* full width */
+}
+
+/* the box for the copyright text */
+.footer-copyright {
+    padding: 12px 20px 16px 20px; /* space inside: top 12, right 20, bottom 16, left 20 */
+    text-align: center; /* text in the middle */
+}
+
+/* the copyright text */
+.copyright-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 0.8rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    line-height: 1.5; /* space between lines */
+    max-width: 900px; /* not wider than 900px */
+    margin: 0 auto; /* centered */
+}
+
+/* phones and small tablets (screens 850px and smaller) */
+/* @media = rules that only work when the screen matches the size I wrote */
+@media screen and (max-width: 850px) {
+    /* show the hamburger button on phones */
+    .hamburger {
+        display: flex; /* shows the 3 lines (it was display: none on computers) */
+    }
+
+    /* the menu becomes a dropdown under the header */
+    .main-nav {
+        position: absolute; /* takes the menu out of the normal flow so it can drop under the header */
+        top: 100%; /* starts right at the bottom of the header (100% of the header height) */
+        left: 0; /* starts from the left edge */
+        width: 100%; /* full width of the screen */
+        background-color: #ffffff; /* white background */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); /* soft shadow under the dropdown */
+        max-height: 0; /* height is 0 so the menu is hidden */
+        overflow: hidden; /* anything outside the box is cut, so the links cannot be seen while closed */
+        transition: max-height 0.35s ease-in-out; /* smooth sliding open and close */
+    }
+
+    /* the menu when it is opened (script.js adds the "open" class when the hamburger is clicked) */
+    .main-nav.open {
+        max-height: 400px; /* big enough height so all the links show */
+    }
+
+    /* the menu links are stacked and in the center */
+    .nav-list {
+        flex-direction: column; /* links go top to bottom */
+        align-items: center; /* links in the middle */
+        width: 100%; /* full width */
+        padding: 22px 0; /* space on top and bottom of the list */
+        gap: 18px; /* space between the links */
+    }
+
+    /* each item of the menu list on phones */
+    .nav-list li {
+        width: 100%; /* full width */
+        text-align: center; /* text in the middle */
+    }
+
+    /* the menu links on phones */
+    .nav-link {
+        font-size: 0.95rem; /* a little bigger text so it is easier to tap */
+        display: inline-block; /* so padding and the line under it work */
+        text-align: center; /* text in the middle */
+    }
+
+    /* the footer is stacked on phones */
+    .footer-container {
+        flex-direction: column; /* logo, disclaimer and contact go top to bottom */
+        text-align: center; /* text in the middle */
+        gap: 20px; /* space between them */
+        padding: 20px; /* space inside */
+    }
+
+    /* the 2 text columns are centered and full width on phones */
+    .footer-column.left,
+    .footer-column.right {
+        text-align: center; /* text in the middle (before it was right and left) */
+        width: 100%; /* full width */
+        max-width: 100%; /* no limit on the width */
+    }
+
+    /* the logo goes on top on phones */
+    .footer-logo-col {
+        order: -1; /* negative order puts it first, so the logo is at the top */
+    }
+
+    /* smaller copyright text on phones */
+    .copyright-text {
+        font-size: 0.75rem; /* text size on phones */
+    }
+}

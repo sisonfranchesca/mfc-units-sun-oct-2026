@@ -1,0 +1,321 @@
+<!-- Franchesca Zyreen Sison (MFC Units - October 2026) -->
+
+<!DOCTYPE html> <!-- tells the browser this file is HTML5 -->
+<html lang="en"> <!-- start of the whole page, lang="en" means the page is in English -->
+<head> <!-- the head is for the page settings, it is not shown on the screen -->
+    <meta charset="UTF-8"> <!-- lets the page show all letters and symbols properly (like ★ and ₱) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit on phone screens -->
+    <title>MFC Units - Guidelines</title> <!-- the text you see on the browser tab -->
+
+    <!-- preload the hero picture so it loads early and the banner does not appear late -->
+    <link rel="preload" href="images/guidelines.jpg" as="image"> <!-- tells the browser to download this picture first -->
+
+    <!-- shared css, used by every page (header and footer) -->
+    <link rel="stylesheet" href="css/header-footer.css"> <!-- connects the header-footer css file -->
+
+    <!-- css that is only for this guidelines page -->
+    <link rel="stylesheet" href="css/guidelines.css"> <!-- connects the guidelines css file -->
+</head> <!-- end of the head -->
+<body> <!-- everything inside the body is what you see on the screen -->
+
+    <!-- header (the top part with logo and menu) -->
+    <header class="site-header"> <!-- the top bar of the website -->
+        <div class="header-container"> <!-- a box that holds the logo and the menu so I can arrange them -->
+            <a href="index.html" class="brand-link"> <!-- clicking the logo and name goes back to the home page -->
+                <img src="images/mfc-logo-header.png" alt="MFC Units Logo" class="header-logo"> <!-- the logo picture, alt is the text shown if the picture fails to load -->
+                <span class="brand-title">MFC UNITS</span> <!-- the name beside the logo -->
+            </a> <!-- end of the logo link -->
+
+            <button class="hamburger" aria-label="Toggle navigation"> <!-- the 3-line menu button, only shows on phones -->
+                <span></span> <!-- first line of the hamburger -->
+                <span></span> <!-- second line of the hamburger -->
+                <span></span> <!-- third line of the hamburger -->
+            </button> <!-- end of the hamburger button -->
+
+            <nav class="main-nav"> <!-- nav means navigation, this holds the menu links -->
+                <ul class="nav-list"> <!-- a list of the menu links -->
+                    <li><a href="index.html" class="nav-link" data-page="home">HOME</a></li> <!-- link to home page, data-page is used by the js to know which page it is -->
+                    <li><a href="about.html" class="nav-link" data-page="about">ABOUT US</a></li> <!-- link to the about page -->
+                    <li><a href="unit.html" class="nav-link" data-page="unit">UNIT</a></li> <!-- link to the unit page -->
+                    <li><a href="location.html" class="nav-link" data-page="location">LOCATION</a></li> <!-- link to the location page -->
+                    <li><a href="guidelines.html" class="nav-link" data-page="guidelines">GUIDELINES</a></li> <!-- link to the guidelines page -->
+                    <li><a href="faqs.html" class="nav-link" data-page="faqs">FAQs</a></li> <!-- link to the FAQs page -->
+                </ul> <!-- end of the menu list -->
+            </nav> <!-- end of the nav -->
+        </div> <!-- end of the header container -->
+        <div class="header-divider"></div> <!-- the thin line under the header -->
+    </header> <!-- end of the header -->
+
+    <!-- main content (the middle part of the guidelines page) -->
+    <main> <!-- main holds the important content of the page, between header and footer -->
+
+        <!-- hero section, the banner with the picture and the title -->
+        <section class="hero-section"> <!-- the banner, the guidelines picture is its background (set in css) -->
+            <div class="hero-content"> <!-- box that holds the title inside the banner -->
+                <h1 class="hero-title">Guidelines</h1> <!-- the biggest title of the page -->
+            </div> <!-- end of the hero content -->
+        </section> <!-- end of the hero section -->
+
+        <!-- intro section, the title and the line under it -->
+        <section class="guidelines-intro-container"> <!-- the whole intro part -->
+            <div class="intro-header-block"> <!-- box for the title and the line -->
+                <h2 class="section-main-title">Everything You Need To Know!</h2> <!-- title of the intro -->
+                <div class="title-divider"></div> <!-- the line under the title -->
+            </div> <!-- end of the title box -->
+        </section> <!-- end of the intro section -->
+
+        <!-- the big box that holds all 8 guideline cards -->
+        <div class="guidelines-content-wrapper"> <!-- cards are stacked top to bottom inside this -->
+
+            <!-- card 1, move-in process (solid border) -->
+            <section class="guideline-card solid-border"> <!-- the card, solid-border makes the border a straight line -->
+                <h2 class="block-title">MOVE-IN PROCESS</h2> <!-- title of the card, css places it above the border -->
+
+                <div class="guideline-step"> <!-- step 1 box -->
+                    <h3>1. Reservation Payment:</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>To secure the unit, a reservation fee equivalent to 1 month's advance rent is required. Once you officially move in and continue with the lease, this reservation fee will automatically cover your 1st month's rent.</li> <!-- explains the reservation fee -->
+                        <li><strong>Please note:</strong> If you decide to cancel, <strong>the reservation fee is non-refundable</strong>.</li> <!-- strong makes the text bold, warns that the fee is not refundable -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 1 -->
+
+                <div class="guideline-step"> <!-- step 2 box -->
+                    <h3>2. Information Sharing & Document Preparation:</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>After you secure the reservation, the Owner will request your full personal details to draft the lease contract.</li> <!-- what happens after reserving -->
+                        <li>Simultaneously, the Owner will provide you with the necessary <strong>Move-In Documents</strong>. The unit details will already be pre-filled by the Owner, so you only need to fill out your personal information. These documents include: <!-- tells about the documents, the list of documents is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list, sub-list is for the css -->
+                                <li>Move-In Clearance for Tenant Form</li> <!-- document 1 -->
+                                <li>Tenant Information Sheet Form</li> <!-- document 2 -->
+                                <li>SRCC Gate Pass Form</li> <!-- document 3 -->
+                                <li>Resident RFID Application Form (with Passport-Size Photo)</li> <!-- document 4 -->
+                                <li>Notarized Contract Document (signed by the Owner/Lawyer)</li> <!-- document 5 -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                        <li><strong>Note:</strong> You can verify and inspect the official templates of these files by checking the <a href="https://www.sunresidences.ph/property/forms" target="_blank" rel="noopener noreferrer" class="external-link">Sun Residences Online Forms link</a>.</li> <!-- link to the official forms, target="_blank" opens a new tab, rel is for safety -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 2 -->
+
+                <div class="guideline-step"> <!-- step 3 box -->
+                    <h3>3. Notarization:</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>Once the paperwork is filled out and signed, the documents will be processed for legal notarization.</li> <!-- explains notarization -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 3 -->
+
+                <div class="guideline-step"> <!-- step 4 box -->
+                    <h3>4. Admin Submission (via Email):</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>Once notarized, the Owner will submit the documents to the building administration.</li> <!-- who submits the documents -->
+                        <li><strong>Processing Time:</strong> Approval takes seven (7) working days (Excluding weekends and holidays).</li> <!-- how long the approval takes -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 4 -->
+            </section> <!-- end of card 1 -->
+
+            <!-- card 2, day of move-in (solid border) -->
+            <section class="guideline-card solid-border"> <!-- the card with a solid border -->
+                <h2 class="block-title">DAY OF MOVE-IN</h2> <!-- title of the card -->
+
+                <div class="guideline-step"> <!-- step 1 box -->
+                    <h3>1. Move-In Clearance & Gate Pass:</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>Once the admin approves the submitted documents via email, they will issue an approved, stamped Move-In Clearance. You must present this stamped copy to the building security guard on your move-in day.</li> <!-- what to show to the guard -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 1 -->
+
+                <div class="guideline-step"> <!-- step 2 box -->
+                    <h3>2. Final Payment on-site:</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>Full payment for the <strong>2-month security deposit</strong> and the <strong>₱1,000 RFID fee</strong> must be settled on the day of move-in.</li> <!-- what to pay on move-in day -->
+                        <li><strong>Payment Method:</strong> Bank transfer or Bank deposit.</li> <!-- how to pay -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 2 -->
+            </section> <!-- end of card 2 -->
+
+            <!-- card 3, rfid card (solid border) -->
+            <section class="guideline-card solid-border"> <!-- the card with a solid border -->
+                <h2 class="block-title">RFID CARD</h2> <!-- title of the card -->
+
+                <div class="guideline-step"> <!-- one box for this card, no step title here -->
+                    <ul> <!-- list of the details -->
+                        <li>From the 39th floor, you need to go down to the 6th floor and to the Tower 1 (2nd floor) admin office to complete your RFID registration by bringing: <!-- tells where to go, the list of things to bring is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list -->
+                                <li>One (1) Passport-size photo</li> <!-- thing to bring 1 -->
+                                <li>₱150 processing fee for the RFID card</li> <!-- thing to bring 2 -->
+                                <li>Valid ID for identity verification</li> <!-- thing to bring 3 -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                        <li>While waiting for your actual RFID card to be processed and issued, the admin will provide you with a <strong>claim stub</strong> as your temporary pass to enter the premises and as official proof of payment.</li> <!-- explains the claim stub -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of the box -->
+            </section> <!-- end of card 3 -->
+
+            <!-- card 4, financials and utility payments (dashed border) -->
+            <section class="guideline-card dashed-border"> <!-- the card, dashed-border makes the border broken lines -->
+                <h2 class="block-title">FINANCIALS & UTILITY PAYMENTS</h2> <!-- title of the card -->
+
+                <div class="guideline-step"> <!-- one box for this card -->
+                    <ul> <!-- list of the details -->
+                        <li><strong>Included in Rent:</strong> Basic water, Wi-Fi, and condo association dues are fully covered by the landlord.</li> <!-- what is already included in the rent -->
+                        <li><strong>Electricity:</strong> Must be paid by the tenant every month <strong>on or before the 16th</strong>.</li> <!-- electricity due date -->
+                        <li><strong>Split Bills:</strong> All tenant utilities (like electricity) must be split equally among all tenants, even if someone is temporarily away or on vacation.</li> <!-- bills are divided equally -->
+                        <li><strong>Late Rent Policy:</strong> <!-- the late rent rules, the smaller list is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list -->
+                                <li><strong>Days 1–14:</strong> Grace period to pay rent.</li> <!-- rule 1 -->
+                                <li><strong>After Day 14:</strong> A <strong>10% penalty fee</strong> is applied to overdue rent.</li> <!-- rule 2 -->
+                                <li><strong>Day 30:</strong> If unpaid after 30 days, <strong>automatic eviction and contract termination</strong> apply, with <strong>100% forfeiture of the security deposit</strong>.</li> <!-- rule 3 -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of the box -->
+            </section> <!-- end of card 4 -->
+
+            <!-- card 5, house rules and safety (dashed border) -->
+            <section class="guideline-card dashed-border"> <!-- the card with a dashed border -->
+                <h2 class="block-title">HOUSE RULES & SAFETY</h2> <!-- title of the card -->
+
+                <div class="guideline-step"> <!-- one box for this card -->
+                    <ul> <!-- list of the rules -->
+                        <li><strong>Occupancy:</strong> Maximum of 4 authorized occupants only.</li> <!-- max number of people -->
+                        <li><strong>No Subleasing:</strong> You cannot sublet, transfer, or share the room/unit with unauthorized persons.</li> <!-- no subleasing rule -->
+                        <li><strong>Strict Visitor Policy:</strong> <!-- the visitor rules, the smaller list is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list -->
+                                <li>No overnight guests or sleepovers under any circumstances (causes immediate security deposit forfeiture and same-day eviction).</li> <!-- visitor rule 1 -->
+                                <li>Female visitors only allowed, and only until 7:00 PM.</li> <!-- visitor rule 2 -->
+                                <li>No male visitors permitted in the unit at any time.</li> <!-- visitor rule 3 -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                        <li><strong>Strict Prohibitions:</strong> No smoking, no pets, and no illegal acts.</li> <!-- things that are not allowed -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of the box -->
+            </section> <!-- end of card 5 -->
+
+            <!-- card 6, unit care and maintenance (dashed border) -->
+            <section class="guideline-card dashed-border"> <!-- the card with a dashed border -->
+                <h2 class="block-title">UNIT CARE & MAINTENANCE</h2> <!-- title of the card -->
+
+                <div class="guideline-step"> <!-- one box for this card -->
+                    <ul> <!-- list of the rules -->
+                        <li><strong>Wall Protection:</strong> Strictly <strong>no drilling holes, posting, taping, or sticking items</strong> on the walls that could damage paint. Tenants must pay to repair and repaint any damaged surfaces.</li> <!-- wall rule -->
+                        <li><strong>Routine Cleaning:</strong> <!-- cleaning rule, the smaller list is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list -->
+                                <li>Tenants must maintain a weekly cleaning schedule. Unannounced inspections may occur; if unmaintained, a professional cleaning service will be hired at the tenants' expense.</li> <!-- cleaning details -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                        <li><strong>Repairs Threshold:</strong> <!-- who pays for repairs, the smaller list is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list -->
+                                <li><strong>Minor Repairs (< ₱3,000):</strong> Paid by the tenant.</li> <!-- minor repairs, the < sign here means "less than" -->
+                                <li><strong>Major Repairs (> ₱3,000):</strong> Handled by the landlord (unless caused by tenant negligence).</li> <!-- major repairs, the > sign here means "more than" -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                        <li><strong>Mandatory Periodic Servicing (Capped at ₱1,000 max per instance):</strong> <!-- required servicing, the smaller list is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list -->
+                                <li><strong>Air-con cleaning:</strong> At least every 3 months.</li> <!-- servicing 1 -->
+                                <li><strong>Grease trap cleaning:</strong> Monthly or every 2 months.</li> <!-- servicing 2 -->
+                                <li><strong>Plumbing/Toilet servicing:</strong> Every 2 months.</li> <!-- servicing 3 -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of the box -->
+            </section> <!-- end of card 6 -->
+
+            <!-- card 7, renewal and early termination (dashed border) -->
+            <section class="guideline-card dashed-border"> <!-- the card with a dashed border -->
+                <h2 class="block-title">RENEWAL & EARLY TERMINATION</h2> <!-- title of the card -->
+
+                <div class="guideline-step"> <!-- one box for this card -->
+                    <ul> <!-- list of the rules -->
+                        <li><strong>Lease Renewal:</strong> If renewing, written notice must be sent <strong>at least 30 days before</strong> the contract ends.</li> <!-- renewal rule -->
+                        <li><strong>Early Termination:</strong> If terminating early, 30 days' written notice is required, but the 2-month security deposit and RFID deposit are <strong>forfeited</strong>. The tenant must pay for the full cost of notarizing the contract as well as all associated legal paper and processing fees.</li> <!-- early termination rule -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of the box -->
+            </section> <!-- end of card 7 -->
+
+            <!-- card 8, move-out process (solid border) -->
+            <section class="guideline-card solid-border"> <!-- the card with a solid border -->
+                <h2 class="block-title">MOVE-OUT PROCESS</h2> <!-- title of the card -->
+
+                <div class="guideline-step"> <!-- step 1 box -->
+                    <h3>1. Submission of Move-Out Documents:</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>When moving out, the Owner will submit the required <strong>Move-Out Documents</strong> to the admin on your behalf: <!-- who submits the documents, the smaller list is inside this li -->
+                            <ul class="sub-list"> <!-- a smaller list inside the list -->
+                                <li>SRCC Move-Out Clearance for Tenant Form</li> <!-- document 1 -->
+                                <li>SRCC Gate Pass Form</li> <!-- document 2 -->
+                            </ul> <!-- end of the smaller list -->
+                        </li> <!-- end of the li that has the smaller list -->
+                        <li><strong>Note:</strong> You may also review these official forms via the <a href="https://www.sunresidences.ph/property/forms" target="_blank" rel="noopener noreferrer" class="external-link">Sun Residences Online Forms link</a>.</li> <!-- link to the official forms, opens in a new tab -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 1 -->
+
+                <div class="guideline-step"> <!-- step 2 box -->
+                    <h3>2. Surrender of RFID:</h3> <!-- step title -->
+                    <ul> <!-- list of the details of this step -->
+                        <li>You are required to return your access RFID card directly to the owner or to the building admin.</li> <!-- where to return the RFID -->
+                        <li><strong>Important:</strong> If you choose to return the RFID card to the building admin yourself, you must secure a signed proof of receipt to confirm they have officially received it.</li> <!-- reminder to get a proof of receipt -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of step 2 -->
+            </section> <!-- end of card 8 -->
+
+        </div> <!-- end of the box that holds the 8 cards -->
+
+        <!-- need help section, the green box with the FAQs button -->
+        <div class="help-banner-wrapper"> <!-- outer box that controls the width of the green box -->
+            <section class="help-banner"> <!-- the green box itself -->
+                <div class="help-inner"> <!-- inner box that holds the text and the button -->
+                    <h2 class="help-title">Need help?</h2> <!-- title of the green box -->
+                    <p class="help-text">Visit the Frequently Asked Questions Page for more information.</p> <!-- message that points to the FAQs page -->
+                    <div class="help-buttons"> <!-- box that holds the button -->
+                        <a href="faqs.html" class="help-btn">FAQs</a> <!-- button to the FAQs page -->
+                    </div> <!-- end of the button box -->
+                </div> <!-- end of the inner box -->
+            </section> <!-- end of the green box -->
+        </div> <!-- end of the outer box -->
+
+        <!-- official sun residences notice, the small note at the very bottom -->
+        <section class="sun-notice-section"> <!-- the whole notice part -->
+            <p class="sun-notice-text"> <!-- the notice paragraph -->
+                <strong>Please Note:</strong> Official Sun Residences links shared for online forms are for tenant verification and peace of mind only. We are private unit owners operating independently and are not affiliated with Sun Residences management. <!-- says we are not part of Sun Residences management -->
+            </p> <!-- end of the notice paragraph -->
+            <p class="sun-link-wrapper"> <!-- paragraph that holds the link -->
+                <a href="https://www.sunresidences.ph/" target="_blank" rel="noopener noreferrer" class="sun-official-link">Click here if you want to check the official Sun Residences website.</a> <!-- link to the official Sun Residences website, opens in a new tab -->
+            </p> <!-- end of the link paragraph -->
+        </section> <!-- end of the notice section -->
+    </main> <!-- end of the main content -->
+
+    <!-- footer (the bottom part of every page) -->
+    <footer class="site-footer"> <!-- the bottom area of the website -->
+        <div class="footer-top-divider"></div> <!-- the line on top of the footer -->
+        <div class="footer-container"> <!-- box that holds the 3 columns of the footer -->
+            <div class="footer-column left"> <!-- left column -->
+                <h3 class="footer-heading">DISCLAIMER</h3> <!-- left column title -->
+                <p class="footer-text"> <!-- left column text -->
+                    Created and developed by a 3rd-Year BSIT Web Development student as an informational guide for our family's condo unit. <!-- says who made the website -->
+                </p> <!-- end of left text -->
+            </div> <!-- end of left column -->
+
+            <div class="footer-logo-col"> <!-- middle column for the logo -->
+                <img src="images/mfc-logo-footer.png" alt="MFC Units Footer Logo" class="footer-logo"> <!-- the logo picture in the footer -->
+            </div> <!-- end of middle column -->
+
+            <div class="footer-column right"> <!-- right column -->
+                <h3 class="footer-heading">CONTACT US</h3> <!-- right column title -->
+                <p class="footer-text"> <!-- right column text -->
+                    For security and privacy, direct contact details and inquiries are shared exclusively through our official Facebook Messenger tenant group chat. <!-- explains where to contact us -->
+                </p> <!-- end of right text -->
+            </div> <!-- end of right column -->
+        </div> <!-- end of the footer columns box -->
+
+        <div class="footer-mid-divider"></div> <!-- the line between the columns and the copyright -->
+
+        <div class="footer-copyright"> <!-- box for the copyright text -->
+            <p class="copyright-text"> <!-- the copyright text -->
+                &copy; 2026 MFC Units. All photos, logos, and content created and owned by Franchesca Zyreen Sison. All rights reserved. <!-- &copy; shows the © symbol -->
+            </p> <!-- end of the copyright text -->
+        </div> <!-- end of the copyright box -->
+    </footer> <!-- end of the footer -->
+
+    <!-- javascript file, placed at the bottom so the page loads first before the js runs -->
+    <script src="script.js"></script> <!-- connects script.js (hamburger menu, etc.) -->
+</body> <!-- end of the body -->
+</html> <!-- end of the whole page -->

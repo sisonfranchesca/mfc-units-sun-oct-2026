@@ -1,0 +1,428 @@
+<!-- Franchesca Zyreen Sison (MFC Units - October 2026) -->
+
+<!DOCTYPE html> <!-- tells the browser this file is HTML5 -->
+<html lang="en"> <!-- start of the whole page, lang="en" means the page is in English -->
+<head> <!-- the head is for the page settings, it is not shown on the screen -->
+    <meta charset="UTF-8"> <!-- lets the page show all letters and symbols properly (like ☆ and ₱) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit on phone screens -->
+    <title>MFC Units - FAQs</title> <!-- the text you see on the browser tab -->
+
+    <!-- preload the hero picture so it loads early and the banner does not appear late -->
+    <link rel="preload" href="images/faqs.jpg" as="image"> <!-- tells the browser to download this picture first -->
+
+    <!-- shared css, used by every page (header and footer) -->
+    <link rel="stylesheet" href="css/header-footer.css"> <!-- connects the header-footer css file -->
+
+    <!-- css that is only for this FAQs page -->
+    <link rel="stylesheet" href="css/faqs.css"> <!-- connects the faqs css file -->
+</head> <!-- end of the head -->
+<body> <!-- everything inside the body is what you see on the screen -->
+
+    <!-- header (the top part with logo and menu) -->
+    <header class="site-header"> <!-- the top bar of the website -->
+        <div class="header-container"> <!-- a box that holds the logo and the menu so I can arrange them -->
+            <a href="index.html" class="brand-link"> <!-- clicking the logo and name goes back to the home page -->
+                <img src="images/mfc-logo-header.png" alt="MFC Units Logo" class="header-logo"> <!-- the logo picture, alt is the text shown if the picture fails to load -->
+                <span class="brand-title">MFC UNITS</span> <!-- the name beside the logo -->
+            </a> <!-- end of the logo link -->
+
+            <button class="hamburger" aria-label="Toggle navigation"> <!-- the 3-line menu button, only shows on phones -->
+                <span></span> <!-- first line of the hamburger -->
+                <span></span> <!-- second line of the hamburger -->
+                <span></span> <!-- third line of the hamburger -->
+            </button> <!-- end of the hamburger button -->
+
+            <nav class="main-nav"> <!-- nav means navigation, this holds the menu links -->
+                <ul class="nav-list"> <!-- a list of the menu links -->
+                    <li><a href="index.html" class="nav-link" data-page="home">HOME</a></li> <!-- link to home page, data-page is used by the js to know which page it is -->
+                    <li><a href="about.html" class="nav-link" data-page="about">ABOUT US</a></li> <!-- link to the about page -->
+                    <li><a href="unit.html" class="nav-link" data-page="unit">UNIT</a></li> <!-- link to the unit page -->
+                    <li><a href="location.html" class="nav-link" data-page="location">LOCATION</a></li> <!-- link to the location page -->
+                    <li><a href="guidelines.html" class="nav-link" data-page="guidelines">GUIDELINES</a></li> <!-- link to the guidelines page -->
+                    <li><a href="faqs.html" class="nav-link" data-page="faqs">FAQs</a></li> <!-- link to the FAQs page -->
+                </ul> <!-- end of the menu list -->
+            </nav> <!-- end of the nav -->
+        </div> <!-- end of the header container -->
+        <div class="header-divider"></div> <!-- the thin line under the header -->
+    </header> <!-- end of the header -->
+
+    <!-- main content (the middle part of the FAQs page) -->
+    <main> <!-- main holds the important content of the page, between header and footer -->
+
+        <!-- hero section, the banner with the picture and the title -->
+        <section class="hero-section"> <!-- the banner, the faqs picture is its background (set in css) -->
+            <div class="hero-content"> <!-- box that holds the title inside the banner -->
+                <h1 class="hero-title">Frequently Asked Questions</h1> <!-- the biggest title of the page -->
+            </div> <!-- end of the hero content -->
+        </section> <!-- end of the hero section -->
+
+        <!-- need help section, the title and the instruction -->
+        <section class="faqs-intro-container"> <!-- the whole intro part -->
+            <h2 class="section-main-title">Need Help?</h2> <!-- title of the intro -->
+            <p class="intro-subtitle">Click the Question, and the Answer will appear!</p> <!-- tells people to click the questions -->
+            <div class="title-divider"></div> <!-- the line under the text -->
+        </section> <!-- end of the intro section -->
+
+        <!-- the big box that holds all the question categories -->
+        <div class="faqs-content-wrapper"> <!-- categories are stacked top to bottom inside this -->
+
+            <!-- category 1, payment -->
+            <section class="faq-category-block"> <!-- box for one category -->
+                <h2 class="category-title">Payment</h2> <!-- category title -->
+
+                <!-- question 1 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer, js adds the "active" class here when it is opened -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the question is a button so you can click it, aria-expanded tells screen readers if it is open (false = closed, js changes it) -->
+                        <span class="q-text">Q: What is the mode of Payment? (Ano po yung paraan sa pagbabayad?)</span> <!-- the question text (English and Tagalog) -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star on the right side, aria-hidden hides it from screen readers because it is only decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box that opens when clicked -->
+                        <div class="answer-content"> <!-- box that puts the "A:" and the answer side by side -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter on the left -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>Rent - Bank Transfer / Bank Deposit</p> <!-- how to pay the rent -->
+                                <p>Electricity - GCash</p> <!-- how to pay the electricity -->
+                                <p class="answer-note">For security purposes, bank account and account numbers are never posted publicly on this website. They are shared directly with tenants through our official tenant group chat or via private message.</p> <!-- small note about account numbers, answer-note makes it a little smaller -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 1 -->
+
+                <!-- question 2 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: How much is the rent per month? (Magkano po ba ang bayad sa rent bawat buwan?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>Short Term (6 months) - ₱6,000</p> <!-- price for 6 months -->
+                                <p>Long Term (1 year) - ₱5,500</p> <!-- price for 1 year -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 2 -->
+
+                <!-- question 3 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: Are there other bills aside from rent? (May iba pa bang babayaran bukod sa rent?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <ul class="faq-bullet-list"> <!-- a list with stars (the ★ is added by css) -->
+                                    <li>Yes, Electricity bills are divided equally among all 4 tenants, regardless of whether someone is currently away from the unit or out of town.</li> <!-- answer 1 -->
+                                    <li>You also need to pay ₱150 for the RFID card.</li> <!-- answer 2 -->
+                                </ul> <!-- end of the list -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 3 -->
+
+                <!-- question 4 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: Who pays for cleaning services, and is there a price cap? (Sino ang magbabayad para sa cleaning services, at may price cap ba ito?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>Mandatory periodic servicing costs are split equally among all tenants, with a spending cap of ₱1,000 maximum per instance. This covers:</p> <!-- intro of the answer -->
+                                <ul class="faq-bullet-list"> <!-- a list with stars -->
+                                    <li>Air-con cleaning: At least every 3 months</li> <!-- servicing 1 -->
+                                    <li>Grease trap cleaning: Monthly or every 2 months</li> <!-- servicing 2 -->
+                                    <li>Plumbing/Toilet servicing: Every 2 months</li> <!-- servicing 3 -->
+                                </ul> <!-- end of the list -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 4 -->
+
+                <!-- question 5 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: What is the due date for the rent and electricity bills? (Kailan ang takdang petsa para sa rent pati na rin ang bill sa kuryente?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>Rent - Every 1<sup>st</sup> of the month</p> <!-- rent due date, sup makes the "st" small and raised -->
+                                <p>Electricity - Every 16<sup>th</sup> of the month</p> <!-- electricity due date, sup makes the "th" small and raised -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 5 -->
+            </section> <!-- end of category 1 -->
+
+
+            <!-- category 2, 1-month advance and 2-months deposit -->
+            <section class="faq-category-block"> <!-- box for one category -->
+                <h2 class="category-title">1-Month Advance and 2-Months Deposit</h2> <!-- category title -->
+
+                <!-- question 6 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: Is there a reservation fee to secure the unit? (May reservation fee po ba para masecure ang unit?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>Yes! A 1-month advance payment can be used as a reservation fee to hold the unit for you.</p> <!-- intro of the answer -->
+                                <ul class="faq-bullet-list"> <!-- a list with stars -->
+                                    <li>If you push through with the rent: This will automatically serve as your 1<sup>st</sup> month's rent upon moving in.</li> <!-- what happens if they move in -->
+                                    <li>If you decide to cancel: Please note that the reservation fee is non-refundable (Hindi na babalik ang 1-month advance kapag naisipang i-cancel ang reservation).</li> <!-- what happens if they cancel (English and Tagalog) -->
+                                </ul> <!-- end of the list -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 6 -->
+
+                <!-- question 7 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: What is the security deposit requirement? (Magkano ang security deposit?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>We require a 2-months security deposit upon move-in. This is fully refundable within 30 days after the contract ends, provided there are no unpaid utility bills or property damages, as stated in the contract.</p> <!-- explains the security deposit -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 7 -->
+
+                <!-- question 8 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: What is the RFID deposit for? (Para saan po ang RFID deposit?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>The ₱1,000 RFID deposit covers the access card required to enter the building lobby. You will tap your RFID ID card to enter the premises. This deposit is fully refundable when you return the RFID card to us upon moving out.</p> <!-- explains the RFID deposit -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 8 -->
+            </section> <!-- end of category 2 -->
+
+
+            <!-- category 3, admin office -->
+            <section class="faq-category-block"> <!-- box for one category -->
+                <h2 class="category-title">Admin Office</h2> <!-- category title -->
+
+                <!-- question 9 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: Where is the Admin Office located? (Saan matatagpuan ang admin office?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>From the 39th floor, go down to the 6th floor, then proceed to Tower 1 - 2nd Floor.</p> <!-- directions to the admin office -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 9 -->
+
+                <!-- question 10 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: What are the business hours and cut-off times for the admin office? (Ano ang oras ng operasyon at cut-off time po ng admin office?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <ul class="faq-bullet-list"> <!-- a list with stars -->
+                                    <li>Monday to Friday: 9:00 AM – 12:00 PM; 1:00 PM – 6:00 PM (Cut-off: 5:30 PM)</li> <!-- weekday hours -->
+                                    <li>Saturday: 9:00 AM – 1:00 PM (Cut-off: 12:30 PM)</li> <!-- saturday hours -->
+                                    <li>Sunday and Holidays: Closed</li> <!-- closed days -->
+                                </ul> <!-- end of the list -->
+                                <p class="answer-note">These details are compiled for quick information access for tenants. However, official information and complete documentation can also be viewed on the official Sun Residences website. <a href="https://www.sunresidences.ph/" target="_blank" rel="noopener noreferrer" class="external-link">Click here to check.</a></p> <!-- small note with a link to the official website, opens in a new tab -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 10 -->
+            </section> <!-- end of category 3 -->
+
+
+            <!-- category 4, viewing and move-in schedule -->
+            <section class="faq-category-block"> <!-- box for one category -->
+                <h2 class="category-title">Viewing and Move-In Schedule</h2> <!-- category title -->
+
+                <!-- question 11 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: How do I schedule a unit viewing? (Paano mag-schedule ng pag-bisita o pagtingin sa unit?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>Please message the owner or the owner’s daughter directly through their private Facebook Messenger accounts to set up and confirm your viewing schedule.</p> <!-- how to set a viewing -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 11 -->
+
+                <!-- question 12 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: When is the best time to move in? (Kailan ang pinakamagandang araw para mag-move in?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>Monday to Saturday (Saturday morning only) are highly recommended for a smoother process with admin operations and document processing. Moving in on Sundays is strictly prohibited.</p> <!-- best days to move in -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 12 -->
+            </section> <!-- end of category 4 -->
+
+
+            <!-- category 5, move-in -->
+            <section class="faq-category-block"> <!-- box for one category -->
+                <h2 class="category-title">Move-In</h2> <!-- category title -->
+
+                <!-- question 13 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: What documents are needed for the move-in process? (Ano pong mga dokumento ang kailangan para sa move-in?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>You can check the <a href="guidelines.html" class="inline-page-link">guidelines</a> page for more information.</p> <!-- points to the guidelines page, inline-page-link makes the link orange -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 13 -->
+
+                <!-- question 14 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: What items do I need to bring when moving into the unit? (Ano pong mga gamit ang kailangan kong dalhin sa unit?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <p>You only need to bring your valid ID, stamped Move-In Clearance, and personal belongings, such as:</p> <!-- intro of the answer -->
+                                <ul class="faq-bullet-list"> <!-- a list with stars -->
+                                    <li>Pillows, bedsheets, and blankets</li> <!-- item 1 -->
+                                    <li>Clothes and clothes hangers</li> <!-- item 2 -->
+                                    <li>Personal toiletries</li> <!-- item 3 -->
+                                    <li>Personal kitchen necessities</li> <!-- item 4 -->
+                                    <li>Other personal items</li> <!-- item 5 -->
+                                </ul> <!-- end of the list -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 14 -->
+            </section> <!-- end of category 5 -->
+
+
+            <!-- category 6, emergency contact -->
+            <section class="faq-category-block"> <!-- box for one category -->
+                <h2 class="category-title">Emergency Contact</h2> <!-- category title -->
+
+                <!-- question 15 -->
+                <div class="faq-accordion-item"> <!-- one question and its answer -->
+                    <button class="faq-question-btn" aria-expanded="false"> <!-- the clickable question -->
+                        <span class="q-text">Q: Who do I contact in case of an emergency, security concern, or local assistance? (Sino ang tatawagan kapag may emergency o kailangan ng saklolo?)</span> <!-- the question text -->
+                        <span class="faq-star" aria-hidden="true">☆</span> <!-- the star decoration -->
+                    </button> <!-- end of the question button -->
+                    <div class="faq-answer-panel"> <!-- the hidden answer box -->
+                        <div class="answer-content"> <!-- box for "A:" and the answer -->
+                            <span class="answer-prefix">A:</span> <!-- the "A:" letter -->
+                            <div class="answer-body"> <!-- the answer text -->
+                                <ul class="faq-bullet-list"> <!-- a list with stars -->
+                                    <li>Tower 1 Reception: (02) 8400-3406</li> <!-- contact 1 -->
+                                    <li>Tower 2 Reception: (02) 8400-3413</li> <!-- contact 2 -->
+                                    <li>Engineering / Maintenance: (02) 8668-8124</li> <!-- contact 3 -->
+                                    <li>Building Security: (0915) 054-7649 / (0962) 137-8287</li> <!-- contact 4 -->
+                                    <li>Brgy. Sta. Teresita: (02) 8731-7539</li> <!-- contact 5 -->
+                                    <li>La Loma Police Station: (02) 8731-8341</li> <!-- contact 6 -->
+                                    <li>La Loma Fire Station: (02) 8740-0501</li> <!-- contact 7 -->
+                                </ul> <!-- end of the list -->
+                                <p class="answer-note">These details are compiled for quick information access for tenants. However, official information and complete documentation can also be viewed on the official Sun Residences website. <a href="https://www.sunresidences.ph/" target="_blank" rel="noopener noreferrer" class="external-link">Click here to check.</a></p> <!-- small note with a link to the official website -->
+                            </div> <!-- end of the answer text -->
+                        </div> <!-- end of the answer content -->
+                    </div> <!-- end of the answer panel -->
+                </div> <!-- end of question 15 -->
+            </section> <!-- end of category 6 -->
+
+        </div> <!-- end of the box that holds all the categories -->
+
+        <!-- unanswered questions, the last message at the bottom -->
+        <div class="unanswered-banner-wrapper"> <!-- box that controls the width of the message -->
+            <p class="unanswered-text"> <!-- the message paragraph -->
+                If your question was not answered by the information above, kindly message the owner or the owner’s daughter through their private Facebook Messenger accounts, or reach out directly in the official tenant group chat. Thank you! <!-- tells people what to do if their question is not here -->
+            </p> <!-- end of the message paragraph -->
+        </div> <!-- end of the message box -->
+    </main> <!-- end of the main content -->
+
+    <!-- footer (the bottom part of every page) -->
+    <footer class="site-footer"> <!-- the bottom area of the website -->
+        <div class="footer-top-divider"></div> <!-- the line on top of the footer -->
+        <div class="footer-container"> <!-- box that holds the 3 columns of the footer -->
+            <div class="footer-column left"> <!-- left column -->
+                <h3 class="footer-heading">DISCLAIMER</h3> <!-- left column title -->
+                <p class="footer-text"> <!-- left column text -->
+                    Created and developed by a 3rd-Year BSIT Web Development student as an informational guide for our family's condo unit. <!-- says who made the website -->
+                </p> <!-- end of left text -->
+            </div> <!-- end of left column -->
+
+            <div class="footer-logo-col"> <!-- middle column for the logo -->
+                <img src="images/mfc-logo-footer.png" alt="MFC Units Footer Logo" class="footer-logo"> <!-- the logo picture in the footer -->
+            </div> <!-- end of middle column -->
+
+            <div class="footer-column right"> <!-- right column -->
+                <h3 class="footer-heading">CONTACT US</h3> <!-- right column title -->
+                <p class="footer-text"> <!-- right column text -->
+                    For security and privacy, direct contact details and inquiries are shared exclusively through our official Facebook Messenger tenant group chat. <!-- explains where to contact us -->
+                </p> <!-- end of right text -->
+            </div> <!-- end of right column -->
+        </div> <!-- end of the footer columns box -->
+
+        <div class="footer-mid-divider"></div> <!-- the line between the columns and the copyright -->
+
+        <div class="footer-copyright"> <!-- box for the copyright text -->
+            <p class="copyright-text"> <!-- the copyright text -->
+                &copy; 2026 MFC Units. All photos, logos, and content created and owned by Franchesca Zyreen Sison. All rights reserved. <!-- &copy; shows the © symbol -->
+            </p> <!-- end of the copyright text -->
+        </div> <!-- end of the copyright box -->
+    </footer> <!-- end of the footer -->
+
+    <!-- javascript for this page only, it makes the questions open and close when clicked -->
+    <script src="js/faqs.js"></script> <!-- connects faqs.js, it is inside the js folder -->
+    <!-- javascript for all pages -->
+    <script src="script.js"></script> <!-- connects script.js (hamburger menu, etc.) -->
+</body> <!-- end of the body -->
+</html> <!-- end of the whole page -->

@@ -1,0 +1,388 @@
+/* Franchesca Zyreen Sison (MFC Units - October 2026) */
+
+/* main = the whole middle part of the page between header and footer */
+main {
+    background-color: #ffffff; /* white background */
+    width: 100%; /* takes the full width of the screen */
+    overflow-x: hidden; /* hides anything that goes outside the sides so no sideways scrolling */
+    padding-bottom: 25px; /* space at the bottom inside main, before the footer */
+}
+
+/* hero section = the banner at the top with the faqs picture */
+.hero-section {
+    position: relative; /* needed so the brown overlay (::before) can sit inside this banner */
+    height: 280px; /* the banner is exactly 280px tall */
+    min-height: 280px; /* and never shorter than 280px */
+    display: flex; /* turns on flexbox so I can center the title */
+    align-items: center; /* centers the title up and down */
+    justify-content: center; /* centers the title left and right */
+    background-color: #785143; /* brown color shown while the picture is still loading */
+    background-image: url('../images/faqs.jpg'); /* the faqs picture, ../ means go back one folder out of css */
+    background-size: cover; /* the picture fills the whole banner without stretching */
+    background-position: center; /* shows the center part of the picture */
+    background-repeat: no-repeat; /* the picture is not repeated */
+    width: 92%; /* the banner is 92% of the screen width */
+    max-width: 1200px; /* but never wider than 1200px on big screens */
+    margin: 20px auto 30px auto; /* top 20px, sides auto (centered), bottom 30px (order: top right bottom left) */
+    border-radius: 16px; /* rounded corners */
+    overflow: hidden; /* cuts the picture so it follows the rounded corners */
+    text-align: center; /* text in the middle */
+    padding: 0 30px; /* no space on top and bottom, 30px on the left and right */
+}
+
+/* ::before makes a fake extra layer, this is the brown color over the picture */
+.hero-section::before {
+    content: ''; /* ::before needs this to show up, empty because it is only a color layer */
+    position: absolute; /* lets it sit on top of the banner */
+    top: 0; /* starts at the top edge */
+    left: 0; /* starts at the left edge */
+    width: 100%; /* covers the full width */
+    height: 100%; /* covers the full height */
+    background-color: rgba(120, 81, 67, 0.45); /* brown with 45% color (the last number 0.45) so the picture can still be seen */
+    z-index: 1; /* layer order, 1 means it is above the picture */
+}
+
+/* hero content = the box with the title inside the banner */
+.hero-content {
+    position: relative; /* needed so z-index works */
+    z-index: 2; /* higher than the brown layer so the title is on top and not covered */
+    max-width: 1100px; /* not wider than 1100px */
+    width: 100%; /* takes the full width it can */
+    margin: 0 auto; /* centers the box */
+}
+
+/* the big title "Frequently Asked Questions" */
+.hero-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* the font, if Georgia is missing it uses the next one */
+    font-size: clamp(2.4rem, 4.5vw, 3.5rem); /* clamp = smallest, ideal, biggest size, so it grows or shrinks with the screen */
+    font-weight: 700; /* bold */
+    color: #ffffff; /* white text */
+    line-height: 1.15; /* space between lines of text */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* soft dark shadow behind the letters so they are easier to read on the picture */
+}
+
+/* intro section = "Need Help?", the instruction and the line */
+.faqs-intro-container {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 25px auto; /* centered, 25px space at the bottom */
+    text-align: center; /* text in the middle */
+}
+
+/* the title "Need Help?" */
+.section-main-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(2.2rem, 3.8vw, 2.9rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #785143; /* brown text */
+    margin-bottom: 8px; /* space below the title */
+    line-height: 1.2; /* space between lines of text */
+}
+
+/* the text "Click the Question, and the Answer will appear!" */
+.intro-subtitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.15rem; /* text size */
+    font-weight: 400; /* normal, not bold */
+    color: #785143; /* brown text */
+    margin-bottom: 15px; /* space between the text and the line */
+}
+
+/* the line under the intro */
+.title-divider {
+    width: 100%; /* line is as wide as its box */
+    max-width: 1200px; /* but not wider than 1200px */
+    height: 3px; /* how thick the line is */
+    background-color: #785143; /* brown line */
+    margin: 0 auto; /* centered */
+}
+
+/* the big box that holds all the categories */
+.faqs-content-wrapper {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 25px auto; /* centered, 25px space at the bottom */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the categories top to bottom */
+    gap: 25px; /* space between the categories */
+}
+
+/* one category (Payment, Admin Office, etc.) */
+.faq-category-block {
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the title and the questions top to bottom */
+    gap: 14px; /* space between the questions */
+}
+
+/* the category titles */
+.category-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(1.8rem, 3vw, 2.3rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #785143; /* brown text */
+    margin-bottom: 5px; /* space below the title */
+    line-height: 1.2; /* space between lines */
+}
+
+/* each question box (the question and its hidden answer together) */
+.faq-accordion-item {
+    background-color: #ffffff; /* white background */
+    border: 3.5px solid #785143; /* brown border around the whole question box */
+    border-radius: 10px; /* rounded corners */
+    overflow: hidden; /* cuts anything inside to follow the rounded corners (also hides the closed answer) */
+    box-shadow: none; /* no shadow */
+}
+
+/* the question button (the brown bar you click) */
+.faq-question-btn {
+    width: 100%; /* full width of the box */
+    background-color: #785143; /* brown background */
+    color: #ffffff; /* white text */
+    border: none; /* removes the default button border */
+    padding: 16px 22px; /* space inside the button */
+    display: flex; /* turns on flexbox so the question and the star can be side by side */
+    align-items: center; /* lines them up in the middle */
+    justify-content: space-between; /* question on the left, star on the far right */
+    text-align: left; /* question text starts from the left */
+    cursor: pointer; /* the mouse turns into a hand when over it */
+    border-radius: 6.5px 6.5px 0 0; /* rounds only the top corners (top-left, top-right, bottom-right, bottom-left), a little smaller than the box so it fits inside the border */
+}
+
+/* the question text */
+.q-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the question */
+    font-size: 1.08rem; /* text size */
+    font-weight: 400; /* normal, not bold */
+    line-height: 1.5; /* space between lines */
+    color: #ffffff; /* white text */
+}
+
+/* the star on the right side of the question */
+.faq-star {
+    font-size: 2.1rem; /* big star */
+    color: #ffffff; /* white star */
+    flex-shrink: 0; /* the star does not get squished when the question is long */
+    margin-left: 15px; /* space between the question and the star */
+    user-select: none; /* people cannot highlight the star by accident when clicking */
+    line-height: 1; /* no extra space around the star */
+}
+
+/* the answer box, it is closed (height 0) until js adds the "active" class */
+.faq-answer-panel {
+    max-height: 0; /* height is 0 so the answer is hidden */
+    overflow: hidden; /* anything outside the box is cut, so the answer cannot be seen */
+    background-color: #ffffff; /* white background */
+    padding: 0 24px; /* no space on top and bottom while closed */
+    transition: max-height 0.2s ease-out, padding 0.2s ease-out; /* smooth and quick closing (0.2 seconds) */
+}
+
+/* the answer box when it is opened (the question box has the "active" class) */
+.faq-accordion-item.active .faq-answer-panel {
+    max-height: 1000px; /* big enough height so the whole answer can show */
+    padding: 20px 24px 22px 24px; /* space inside the answer */
+    border-top: 2px solid #785143; /* brown line between the question and the answer */
+    transition: max-height 0.35s ease-in, padding 0.35s ease-in; /* smooth opening (0.35 seconds) */
+}
+
+/* the box that puts the "A:" and the answer side by side */
+.answer-content {
+    display: flex; /* puts them in one row */
+    align-items: flex-start; /* both start from the top */
+    gap: 12px; /* space between "A:" and the answer */
+}
+
+/* the "A:" letter */
+.answer-prefix {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the letter */
+    font-size: 1.05rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #785143; /* brown text */
+    line-height: 1.7; /* space between lines */
+    flex-shrink: 0; /* does not get squished */
+    min-width: 24px; /* keeps a fixed space so all the answers line up */
+}
+
+/* the answer text area */
+.answer-body {
+    flex-grow: 1; /* takes all the leftover space */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the paragraphs top to bottom */
+    gap: 12px; /* space between the paragraphs */
+}
+
+/* the paragraphs inside the answer */
+.answer-body p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.05rem; /* text size */
+    color: #785143; /* brown text */
+    line-height: 1.7; /* space between lines */
+    text-align: left; /* text starts from the left */
+    margin: 0; /* removes the default outside space */
+}
+
+/* the small notes inside the answers */
+.answer-note {
+    font-size: 0.98rem !important; /* a little smaller text, !important makes this beat the .answer-body p rule above */
+    color: #785143 !important; /* brown text, !important again for the same reason */
+    margin-top: 4px; /* a little space above */
+}
+
+/* the lists with stars inside the answers */
+.faq-bullet-list {
+    list-style: none; /* removes the default bullet dots */
+    padding-left: 0; /* removes the default left space of a list */
+    margin: 0; /* removes the default outside space */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the items top to bottom */
+    gap: 8px; /* space between each item */
+}
+
+/* each item in the lists */
+.faq-bullet-list li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the list */
+    font-size: 1.05rem; /* text size */
+    color: #785143; /* brown text */
+    line-height: 1.7; /* space between lines */
+    text-align: justify; /* both edges of the text are straight */
+    position: relative; /* needed so the star (::before) can be placed using left and top */
+    padding-left: 24px; /* empty space on the left where the star will sit */
+}
+
+/* the star in front of each list item, css adds it so I do not need to type ★ in the html */
+.faq-bullet-list li::before {
+    content: "★"; /* the star symbol that will show */
+    position: absolute; /* lets me place the star exactly using left and top */
+    left: 0; /* star sits at the far left */
+    top: 1px; /* moves the star down 1px so it lines up with the text */
+    color: #785143; /* brown star */
+    font-size: 0.95rem; /* star size */
+}
+
+/* the orange links (the commas mean the same style is used for both classes) */
+.external-link,
+.inline-page-link {
+    color: #d27d2d; /* orange text */
+    font-weight: 700; /* bold */
+    text-decoration: underline; /* underline so people know it is a link */
+    transition: opacity 0.2s ease; /* smooth fade when hovering */
+}
+
+/* when the mouse is over the links */
+.external-link:hover,
+.inline-page-link:hover {
+    opacity: 0.8; /* a little see-through */
+}
+
+/* unanswered questions = the last message at the bottom */
+.unanswered-banner-wrapper {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto; /* centered */
+    text-align: center; /* text in the middle */
+    padding: 0; /* no space inside */
+}
+
+/* the message paragraph */
+.unanswered-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.15rem; /* text size */
+    font-weight: 400; /* normal, not bold */
+    color: #785143; /* brown text */
+    line-height: 1.8; /* space between lines */
+    text-align: justify; /* both edges of the text are straight */
+    width: 100%; /* full width */
+    margin: 0 auto; /* centered */
+}
+
+/* phones (screens 850px and smaller) */
+/* @media = rules that only work when the screen matches the size I wrote */
+@media screen and (max-width: 850px) {
+    /* smaller banner on phones */
+    .hero-section {
+        width: 94%; /* a little wider so it fits the phone */
+        height: 180px; /* shorter banner */
+        min-height: 180px; /* and never shorter than 180px */
+        padding: 0 15px; /* smaller space on the sides */
+        margin: 10px auto 15px auto; /* smaller spaces around */
+        border-radius: 12px; /* smaller rounded corners */
+    }
+
+    /* smaller title */
+    .hero-title {
+        font-size: 1.8rem; /* title size on phones */
+    }
+
+    /* these 3 sections share the same rule (the commas mean "all of these") */
+    .faqs-intro-container,
+    .faqs-content-wrapper,
+    .unanswered-banner-wrapper {
+        width: 94%; /* a little wider so it fits the phone */
+        margin-bottom: 20px; /* smaller space below */
+    }
+
+    /* smaller "Need Help?" title */
+    .section-main-title {
+        font-size: 1.8rem; /* title size on phones */
+    }
+
+    /* smaller instruction text */
+    .intro-subtitle {
+        font-size: 0.95rem; /* text size on phones */
+    }
+
+    /* less space between categories */
+    .faqs-content-wrapper {
+        gap: 18px; /* smaller space between categories */
+    }
+
+    /* smaller category titles */
+    .category-title {
+        font-size: 1.35rem; /* title size on phones */
+        margin-bottom: 6px; /* space below the title */
+    }
+
+    /* the question boxes on phones */
+    .faq-accordion-item {
+        border-width: 3px; /* thinner border */
+        border-radius: 10px; /* rounded corners */
+    }
+
+    /* the question button on phones */
+    .faq-question-btn {
+        padding: 12px 14px; /* smaller space inside */
+        border-radius: 6.5px 6.5px 0 0; /* rounds only the top corners */
+    }
+
+    /* smaller question text */
+    .q-text {
+        font-size: 0.9rem; /* text size on phones */
+    }
+
+    /* smaller star */
+    .faq-star {
+        font-size: 1.75rem; /* star size on phones */
+    }
+
+    /* the opened answer on phones */
+    .faq-accordion-item.active .faq-answer-panel {
+        padding: 14px 14px 16px 14px; /* smaller space inside */
+    }
+
+    /* smaller "A:" letter */
+    .answer-prefix {
+        font-size: 0.92rem; /* text size on phones */
+        min-width: 20px; /* smaller fixed space */
+    }
+
+    /* smaller answer text (paragraphs and list items share this rule) */
+    .answer-body p,
+    .faq-bullet-list li {
+        font-size: 0.92rem; /* text size on phones */
+    }
+
+    /* smaller bottom message */
+    .unanswered-text {
+        font-size: 0.98rem; /* text size on phones */
+        text-align: justify; /* both edges of the text are straight */
+    }
+}

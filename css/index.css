@@ -1,0 +1,654 @@
+/* Franchesca Zyreen Sison (MFC Units - October 2026) */
+
+/* main = the whole middle part of the page between header and footer */
+main {
+    background-color: #ffffff; /* white background */
+    width: 100%; /* takes the full width of the screen */
+    overflow-x: hidden; /* hides anything that goes outside the sides so no sideways scrolling */
+}
+
+/* hero section = the big banner at the top with the building picture */
+.hero-section {
+    position: relative; /* needed so the purple overlay (::before) can sit inside this banner */
+    min-height: 420px; /* the banner is at least 420px tall */
+    display: flex; /* turns on flexbox so I can center the content */
+    align-items: center; /* centers the content up and down */
+    justify-content: center; /* centers the content left and right */
+    background-image: url('../images/building.jpg'); /* the building picture, ../ means go back one folder out of css */
+    background-size: cover; /* the picture fills the whole banner without stretching */
+    background-position: center; /* shows the center part of the picture */
+    background-repeat: no-repeat; /* the picture is not repeated */
+    width: 92%; /* the banner is 92% of the screen width */
+    max-width: 1200px; /* but never wider than 1200px on big screens */
+    margin: 20px auto 50px auto; /* top 20px, sides auto (centered), bottom 50px (order: top right bottom left) */
+    border-radius: 16px; /* rounded corners */
+    overflow: hidden; /* cuts the picture so it follows the rounded corners */
+    text-align: left; /* text is aligned to the left */
+    padding: 40px 30px; /* space inside the banner: 40px up and down, 30px left and right */
+}
+
+/* ::before makes a fake extra layer, this is the purple color over the building picture */
+.hero-section::before {
+    content: ''; /* ::before needs this to show up, empty because it is only a color layer */
+    position: absolute; /* lets it sit on top of the banner */
+    top: 0; /* starts at the top edge */
+    left: 0; /* starts at the left edge */
+    width: 100%; /* covers the full width */
+    height: 100%; /* covers the full height */
+    background-color: rgba(95, 72, 98, 0.7); /* purple with 70% see-through (the last number 0.7) so the picture can still be seen */
+    z-index: 1; /* layer order, 1 means it is above the picture */
+}
+
+/* hero content = the box with the text inside the banner */
+.hero-content {
+    position: relative; /* needed so z-index works */
+    z-index: 2; /* higher than the purple layer so the text is on top and not covered */
+    max-width: 1100px; /* the text area is not wider than 1100px */
+    width: 100%; /* takes the full width it can */
+    margin: 0 auto; /* centers the box */
+}
+
+/* the big "Welcome" title */
+.hero-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* the font, if Georgia is missing it uses the next one */
+    font-size: clamp(2.2rem, 4vw, 2.9rem); /* clamp = smallest, ideal, biggest size, so it grows or shrinks with the screen */
+    font-weight: 700; /* bold */
+    color: #ffffff; /* white text */
+    line-height: 1.15; /* space between the lines of text */
+    margin-bottom: 15px; /* space below the title */
+}
+
+/* the small paragraph under the title */
+.hero-subtitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* the font of the paragraph */
+    font-size: clamp(1rem, 1.6vw, 1.18rem); /* size that adjusts to the screen */
+    color: #ffffff; /* white text */
+    line-height: 1.65; /* space between lines so it is easier to read */
+    max-width: 750px; /* keeps the paragraph from getting too wide */
+    margin-bottom: 25px; /* space below the paragraph */
+}
+
+/* the box that holds the 3 buttons in the banner */
+.hero-buttons {
+    display: flex; /* puts the buttons in one row */
+    flex-wrap: wrap; /* if no more space, buttons go to the next line */
+    gap: 15px; /* space between the buttons */
+    align-items: center; /* lines up the buttons in the middle */
+}
+
+/* the 3 outline buttons in the banner */
+.hero-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button text */
+    font-size: 0.95rem; /* size of the button text */
+    font-weight: 700; /* bold text */
+    color: #ffffff; /* white text */
+    background-color: transparent; /* no fill, you can see through it */
+    border: 2px solid #ffffff; /* white outline */
+    padding: 11px 28px; /* space inside the button, makes it bigger */
+    border-radius: 50px; /* big number makes it pill shaped */
+    text-decoration: none; /* removes the underline from the link */
+    text-transform: capitalize; /* first letter of each word is big */
+    display: inline-block; /* lets me use padding and size properly on a link */
+    white-space: nowrap; /* the text stays on one line */
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease; /* makes the hover change smooth and not sudden */
+}
+
+/* when the mouse is over a hero button */
+.hero-btn:hover {
+    transform: scale(1.08); /* the button gets a little bigger */
+    background-color: #ffffff; /* fills with white */
+    color: #5f4862; /* text becomes purple so you can still read it */
+    border-color: #ffffff; /* border stays white */
+}
+
+/* get to know our unit section = the list on the left and picture on the right */
+.unit-overview-section {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* but not wider than 1200px */
+    margin: 0 auto 60px auto; /* centered, with 60px space at the bottom */
+}
+
+/* the grid that puts the text and picture side by side */
+.unit-grid {
+    display: grid; /* turns on grid layout */
+    grid-template-columns: 1fr 1.05fr; /* 2 columns, the right one is a tiny bit bigger (fr = fraction of space) */
+    gap: 35px; /* space between the 2 columns */
+    align-items: stretch; /* makes both columns the same height */
+}
+
+/* the left side with the title, list and buttons */
+.unit-details {
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the things from top to bottom */
+    justify-content: space-between; /* title and list at the top, buttons pushed to the bottom */
+    padding: 5px 0; /* a little space on top and bottom */
+}
+
+/* title "Get to know our Unit" */
+.section-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(2.2rem, 3.8vw, 2.8rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    margin-bottom: 20px; /* space below the title */
+    line-height: 1.15; /* space between lines */
+    white-space: nowrap; /* keeps the title in one line, no wrapping */
+}
+
+/* the list with the stars */
+.unit-list {
+    list-style: none; /* removes the default bullet dots (I used my own ★) */
+    padding: 0; /* removes the default left space of a list */
+    margin: 0 0 20px 0; /* only 20px space at the bottom */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the items top to bottom */
+    gap: 16px; /* space between each item */
+}
+
+/* each item in the list (20 sqm, 39th floor, etc.) */
+.unit-list li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the list */
+    font-size: 1.22rem; /* size of the list text */
+    color: #503d53; /* dark purple text */
+    line-height: 1.6; /* space between lines */
+}
+
+/* the address under Sun Residences */
+.address-block {
+    display: block; /* makes it take its own line */
+    padding-left: 18px; /* moves the address a bit to the right so it looks tucked in */
+    font-size: 1.15rem; /* a little smaller than the list text */
+}
+
+/* the box that holds the 2 buttons under the list */
+.section-buttons {
+    display: flex; /* puts the buttons in a row */
+    flex-wrap: wrap; /* goes to the next line if no space */
+    gap: 15px; /* space between the buttons */
+    margin-top: auto; /* pushes the buttons to the very bottom of the left side */
+}
+
+/* the 2 purple outline buttons (Explore Unit, Check Location) */
+.section-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button */
+    font-size: 0.95rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    background-color: transparent; /* no fill */
+    border: 2px solid #655168; /* purple outline */
+    padding: 11px 26px; /* space inside the button */
+    border-radius: 50px; /* pill shape */
+    text-decoration: none; /* no underline */
+    text-transform: capitalize; /* first letter of each word is big */
+    white-space: nowrap; /* text stays on one line */
+    display: inline-block; /* so padding works on the link */
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease; /* smooth hover effect */
+}
+
+/* when the mouse is over these buttons */
+.section-btn:hover {
+    transform: scale(1.05); /* gets a little bigger */
+    background-color: #655168; /* fills with purple */
+    color: #ffffff; /* text turns white */
+}
+
+/* the box around the unit picture */
+.unit-image-wrapper {
+    width: 100%; /* full width of its column */
+    height: 100%; /* full height of its column */
+    border-radius: 12px; /* rounded corners */
+    overflow: hidden; /* cuts the picture to follow the rounded corners */
+    box-shadow: 0 4px 15px rgba(101, 81, 104, 0.10); /* soft shadow under the picture (right, down, blur, color) */
+}
+
+/* the unit picture itself */
+.unit-preview-img {
+    width: 100%; /* fills the box width */
+    height: 100%; /* fills the box height */
+    display: block; /* removes the tiny empty space under pictures */
+    object-fit: cover; /* picture fills the box without looking stretched (some edges get cut) */
+}
+
+/* everything you need to feel at home = the big box with the title and 3 cards */
+.home-features-container {
+    width: 92%; /* 92% of the screen */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: -10px auto 60px auto; /* top is -10px (pulls it up a bit), centered, 60px at the bottom */
+}
+
+/* the box for the title above the cards */
+.home-features-banner {
+    background-color: transparent; /* no background color */
+    width: 100%; /* full width */
+    padding: 10px 20px 25px 20px; /* space inside: top 10, right 20, bottom 25, left 20 */
+    text-align: center; /* text in the middle */
+    margin-bottom: 25px; /* space between the title and the cards */
+}
+
+/* the inner box to keep the title in the center */
+.banner-inner {
+    max-width: 1100px; /* not wider than 1100px */
+    margin: 0 auto; /* centered */
+}
+
+/* title "Everything you need to feel at home!" */
+.banner-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(2.3rem, 4vw, 3.1rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #826e85; /* light purple text */
+    margin-bottom: 10px; /* space below the title */
+}
+
+/* small text "Visit other pages for more information." */
+.banner-subtitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.25rem; /* text size */
+    color: #826e85; /* light purple text */
+    letter-spacing: 0.5px; /* tiny space between each letter */
+}
+
+/* the grid that holds the 3 cards */
+.features-grid {
+    width: 100%; /* full width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto; /* centered */
+    display: grid; /* turns on grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with the same size */
+    gap: 30px; /* space between the cards */
+}
+
+/* each card (Meet Your Hosts, Settle In Smoothly, Quick Answers) */
+.feature-card {
+    background-color: #ffffff; /* white card */
+    border: 2px dashed #826e85; /* dashed purple border */
+    border-radius: 14px; /* rounded corners */
+    padding: 35px 25px; /* space inside the card */
+    text-align: center; /* text in the middle */
+    box-shadow: 0 4px 15px rgba(130, 110, 133, 0.08); /* very light shadow */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks text then button from top to bottom */
+    justify-content: space-between; /* text at the top, button at the bottom */
+    min-height: 220px; /* the card is at least 220px tall so all 3 look the same */
+}
+
+/* the card titles */
+.feature-card h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the card title */
+    font-size: 1.5rem; /* title size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    margin-bottom: 12px; /* space below the title */
+}
+
+/* the small text in the cards */
+.feature-card p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.05rem; /* text size */
+    color: #655168; /* purple text */
+    line-height: 1.6; /* space between lines */
+    margin-bottom: 25px; /* space between the text and the button */
+}
+
+/* the button inside each card */
+.card-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button */
+    font-size: 0.95rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    background-color: transparent; /* no fill */
+    border: 2px solid #655168; /* purple outline */
+    padding: 10px 28px; /* space inside the button */
+    border-radius: 50px; /* pill shape */
+    text-decoration: none; /* no underline */
+    text-transform: capitalize; /* first letter of each word is big */
+    display: inline-block; /* so padding works on the link */
+    margin: 0 auto; /* centers the button in the card */
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease; /* smooth hover effect */
+}
+
+/* when the mouse is over the card buttons */
+.card-btn:hover {
+    transform: scale(1.08); /* gets a little bigger */
+    background-color: #655168; /* fills with purple */
+    color: #ffffff; /* text turns white */
+}
+
+/* important notice and disclaimer = the purple box with the notice text */
+.disclaimer-wrapper {
+    width: 92%; /* 92% of the screen */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 50px auto; /* centered, 50px at the bottom */
+}
+
+/* the purple box */
+.disclaimer-banner {
+    background-color: #826e85; /* purple background */
+    width: 100%; /* full width */
+    border-radius: 16px; /* rounded corners */
+    padding: 55px 45px; /* space inside the box */
+    color: #ffffff; /* all text inside is white */
+}
+
+/* inner box so the text is not too wide */
+.disclaimer-inner {
+    max-width: 1100px; /* not wider than 1100px */
+    margin: 0 auto; /* centered */
+}
+
+/* the row with the title on the left and language button on the right */
+.disclaimer-header-row {
+    display: flex; /* puts the title and button in one row */
+    justify-content: space-between; /* title on the far left, button on the far right */
+    align-items: center; /* lines them up in the middle */
+    margin-bottom: 25px; /* space below the row */
+    flex-wrap: wrap; /* if no space, the button goes under the title */
+    gap: 15px; /* space between them */
+}
+
+/* title "Important Notice & Disclaimer" */
+.disclaimer-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(1.8rem, 3.2vw, 2.3rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+}
+
+/* the English / Tagalog button */
+.lang-toggle-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button */
+    font-size: 0.9rem; /* text size */
+    background-color: transparent; /* no fill */
+    border: 2px solid #ffffff; /* white outline */
+    color: #ffffff; /* white text */
+    padding: 8px 22px; /* space inside the button */
+    border-radius: 20px; /* rounded corners */
+    cursor: pointer; /* the mouse turns into a hand when over it */
+    transition: all 0.25s ease; /* smooth change for everything when hovering */
+}
+
+/* when the mouse is over the language button */
+.lang-toggle-btn:hover {
+    background-color: #ffffff; /* fills with white */
+    color: #655168; /* text turns purple */
+}
+
+/* the notice paragraphs */
+.disclaimer-body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the paragraphs */
+    font-size: 1.06rem; /* text size */
+    line-height: 1.85; /* big space between lines so it is easy to read */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the paragraphs top to bottom */
+    gap: 20px; /* space between the paragraphs */
+}
+
+/* feedback section = white box with the dashed border and rate website button */
+.feedback-section {
+    width: 92%; /* 92% of the screen */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 40px auto; /* centered, 40px at the bottom */
+    display: flex; /* turns on flexbox */
+    justify-content: space-between; /* text on the left, button on the right */
+    align-items: center; /* lines them up in the middle */
+    flex-wrap: wrap; /* goes to the next line if no space */
+    gap: 20px; /* space between the text and button */
+    background-color: #ffffff; /* white background */
+    border: 2.5px dashed #655168; /* dark purple dashed border */
+    padding: 25px 35px; /* space inside the box */
+    border-radius: 16px; /* rounded corners */
+}
+
+/* the text "Have a moment?..." */
+.feedback-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.15rem; /* text size */
+    color: #655168; /* purple text */
+    font-weight: 700; /* bold */
+}
+
+/* the "Rate Website" button */
+.feedback-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button */
+    font-size: 0.95rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    background-color: transparent; /* no fill */
+    border: 2px solid #655168; /* purple outline */
+    padding: 11px 30px; /* space inside the button */
+    border-radius: 50px; /* pill shape */
+    text-decoration: none; /* no underline */
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease; /* smooth hover effect */
+}
+
+/* when the mouse is over the Rate Website button */
+.feedback-btn:hover {
+    transform: scale(1.06); /* gets a little bigger */
+    background-color: #655168; /* fills with purple */
+    color: #ffffff; /* text turns white */
+    border-color: #655168; /* border stays purple */
+}
+
+/* tablets (screens 1200px and smaller) */
+/* @media = rules that only work when the screen matches the size I wrote */
+@media screen and (max-width: 1200px) {
+    /* 2 columns for the cards */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+        gap: 20px; /* smaller space between cards */
+    }
+
+    /* the 3rd card goes under the other two and stays in the middle */
+    .feature-card:nth-child(3) {
+        grid-column: 1 / -1; /* stretches across all columns (from first line to last line) */
+        justify-self: center; /* puts it in the middle */
+        width: 100%; /* full width */
+        max-width: 500px; /* but not wider than 500px */
+    }
+
+    /* the feedback box becomes centered and stacked */
+    .feedback-section {
+        flex-direction: column; /* text on top, button below */
+        text-align: center; /* text in the middle */
+        align-items: center; /* everything in the middle */
+        gap: 15px; /* space between text and button */
+        padding: 25px 20px; /* space inside the box */
+    }
+
+    /* the feedback button in the middle */
+    .feedback-btn {
+        margin: 0 auto; /* centers the button */
+        display: inline-block; /* so margin works on the link */
+    }
+}
+
+/* second 1200px block, it has the SAME size as the one above so it overrides it hehe*/
+/* because of this, the cards become 1 column on tablets too (the 2 columns above is not used) */
+@media screen and (max-width: 1200px) {
+    /* cards become 1 column */
+    .features-grid {
+        grid-template-columns: 1fr; /* only 1 column, cards are stacked */
+        gap: 20px; /* space between the cards */
+    }
+
+    /* undo the 3rd card style so all 3 cards have the same width */
+    .feature-card:nth-child(3) {
+        grid-column: auto; /* back to normal, takes only one column */
+        justify-self: stretch; /* stretches to fill the column */
+        width: 100%; /* full width */
+        max-width: none; /* removes the 500px limit */
+    }
+
+    /* the feedback box is stacked and centered (same as above) */
+    .feedback-section {
+        flex-direction: column; /* text on top, button below */
+        text-align: center; /* text in the middle */
+        align-items: center; /* everything in the middle */
+        gap: 15px; /* space between text and button */
+        padding: 25px 20px; /* space inside the box */
+    }
+
+    /* the feedback button in the middle (same as above) */
+    .feedback-btn {
+        margin: 0 auto; /* centers the button */
+        display: inline-block; /* so margin works on the link */
+    }
+}
+
+/* phones (screens 850px and smaller) */
+@media screen and (max-width: 850px) {
+    /* smaller banner on phones */
+    .hero-section {
+        width: 94%; /* a little wider so it fits the phone */
+        min-height: auto; /* removes the 420px minimum, height follows the content */
+        height: auto; /* height follows the content */
+        padding: 35px 20px; /* smaller space inside */
+        margin: 15px auto 35px auto; /* smaller spaces around */
+        border-radius: 12px; /* smaller rounded corners */
+    }
+
+    /* smaller title */
+    .hero-title {
+        font-size: 1.8rem; /* title size on phones */
+    }
+
+    /* smaller paragraph */
+    .hero-subtitle {
+        font-size: 0.95rem; /* paragraph size on phones */
+    }
+
+    /* banner buttons stacked */
+    .hero-buttons {
+        flex-direction: column; /* buttons go top to bottom */
+        align-items: stretch; /* buttons are as wide as the box */
+        gap: 10px; /* space between the buttons */
+    }
+
+    /* banner buttons full width */
+    .hero-btn {
+        width: 100%; /* full width button */
+        text-align: center; /* text in the middle */
+        padding: 11px 15px; /* smaller space inside */
+    }
+
+    /* less space under the unit section */
+    .unit-overview-section {
+        margin-bottom: 20px; /* smaller bottom space */
+    }
+
+    /* features box spacing */
+    .home-features-container {
+        margin-top: 0; /* removes the -10px pull up */
+        margin-bottom: 30px; /* smaller bottom space */
+    }
+
+    /* less space under the notice box */
+    .disclaimer-wrapper {
+        margin-bottom: 20px; /* smaller bottom space */
+    }
+
+    /* feedback box spacing */
+    .feedback-section {
+        margin-top: 0; /* no top space */
+        margin-bottom: 25px; /* smaller bottom space */
+        padding: 20px 15px; /* smaller space inside */
+    }
+
+    /* the title box above the cards */
+    .home-features-banner {
+        padding: 10px 10px 15px 10px; /* smaller space inside */
+        margin-bottom: 15px; /* smaller space below */
+    }
+
+    /* the purple notice box */
+    .disclaimer-banner {
+        width: 100%; /* full width */
+        border-radius: 12px; /* smaller rounded corners */
+        padding: 35px 20px; /* smaller space inside */
+    }
+
+    /* unit section becomes 1 column */
+    .unit-grid {
+        grid-template-columns: 1fr; /* only 1 column, text and picture stacked */
+        gap: 20px; /* space between them */
+        align-items: start; /* everything starts at the top */
+    }
+
+    /* the picture moves above the text */
+    .unit-image-wrapper {
+        order: -1; /* negative order puts it first, so the picture is on top */
+        height: auto; /* height follows the picture */
+        max-height: 280px; /* not taller than 280px */
+    }
+
+    /* the picture on phones */
+    .unit-preview-img {
+        height: auto; /* height follows the picture */
+        max-height: 280px; /* not taller than 280px */
+    }
+
+    /* smaller section title */
+    .section-title {
+        font-size: 1.6rem; /* title size on phones */
+    }
+
+    /* smaller list text */
+    .unit-list li {
+        font-size: 0.92rem; /* list text size on phones */
+        line-height: 1.4; /* tighter space between lines */
+    }
+
+    /* smaller address text */
+    .address-block {
+        font-size: 0.85rem; /* address size on phones */
+        padding-left: 12px; /* smaller tuck in */
+    }
+
+    /* section buttons stacked */
+    .section-buttons {
+        flex-direction: column; /* buttons go top to bottom */
+        align-items: stretch; /* buttons are as wide as the box */
+        gap: 10px; /* space between the buttons */
+    }
+
+    /* section buttons full width */
+    .section-btn {
+        width: 100%; /* full width button */
+        text-align: center; /* text in the middle */
+        padding: 11px 15px; /* smaller space inside */
+    }
+
+    /* cards in 1 column (same as the 1200px one above) */
+    .features-grid {
+        grid-template-columns: 1fr; /* only 1 column */
+        gap: 20px; /* space between the cards */
+    }
+
+    /* smaller notice title */
+    .disclaimer-title {
+        font-size: 1.5rem; /* title size on phones */
+    }
+
+    /* smaller notice text */
+    .disclaimer-body {
+        font-size: 0.95rem; /* paragraph size on phones */
+    }
+
+    /* feedback box on phones */
+    .feedback-section {
+        flex-direction: column; /* text on top, button below */
+        text-align: center; /* text in the middle */
+        gap: 15px; /* space between text and button */
+        padding: 20px; /* space inside the box */
+    }
+
+    /* smaller feedback text */
+    .feedback-text {
+        font-size: 1.05rem; /* text size on phones */
+    }
+
+    /* feedback button full width */
+    .feedback-btn {
+        width: 100%; /* full width button */
+        text-align: center; /* text in the middle */
+    }
+}

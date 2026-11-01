@@ -1,0 +1,307 @@
+<!-- Franchesca Zyreen Sison (MFC Units - October 2026) -->
+
+<!DOCTYPE html> <!-- tells the browser this file is HTML5 -->
+<html lang="en"> <!-- start of the whole page, lang="en" means the page is in English -->
+<head> <!-- the head is for the page settings, it is not shown on the screen -->
+    <meta charset="UTF-8"> <!-- lets the page show all letters and symbols properly (like ❮ and ❯) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit on phone screens -->
+    <title>MFC Units - Unit</title> <!-- the text you see on the browser tab -->
+
+    <!-- shared css, used by every page (header and footer) -->
+    <link rel="stylesheet" href="css/header-footer.css"> <!-- connects the header-footer css file -->
+
+    <!-- css that is only for this unit page -->
+    <link rel="stylesheet" href="css/unit.css"> <!-- connects the unit css file -->
+</head> <!-- end of the head -->
+<body> <!-- everything inside the body is what you see on the screen -->
+
+    <!-- header (the top part with logo and menu) -->
+    <header class="site-header"> <!-- the top bar of the website -->
+        <div class="header-container"> <!-- a box that holds the logo and the menu so I can arrange them -->
+            <a href="index.html" class="brand-link"> <!-- clicking the logo and name goes back to the home page -->
+                <img src="images/mfc-logo-header.png" alt="MFC Units Logo" class="header-logo"> <!-- the logo picture, alt is the text shown if the picture fails to load -->
+                <span class="brand-title">MFC UNITS</span> <!-- the name beside the logo -->
+            </a> <!-- end of the logo link -->
+
+            <button class="hamburger" aria-label="Toggle navigation"> <!-- the 3-line menu button, only shows on phones -->
+                <span></span> <!-- first line of the hamburger -->
+                <span></span> <!-- second line of the hamburger -->
+                <span></span> <!-- third line of the hamburger -->
+            </button> <!-- end of the hamburger button -->
+
+            <nav class="main-nav"> <!-- nav means navigation, this holds the menu links -->
+                <ul class="nav-list"> <!-- a list of the menu links -->
+                    <li><a href="index.html" class="nav-link" data-page="home">HOME</a></li> <!-- link to home page, data-page is used by the js to know which page it is -->
+                    <li><a href="about.html" class="nav-link" data-page="about">ABOUT US</a></li> <!-- link to the about page -->
+                    <li><a href="unit.html" class="nav-link" data-page="unit">UNIT</a></li> <!-- link to the unit page -->
+                    <li><a href="location.html" class="nav-link" data-page="location">LOCATION</a></li> <!-- link to the location page -->
+                    <li><a href="guidelines.html" class="nav-link" data-page="guidelines">GUIDELINES</a></li> <!-- link to the guidelines page -->
+                    <li><a href="faqs.html" class="nav-link" data-page="faqs">FAQs</a></li> <!-- link to the FAQs page -->
+                </ul> <!-- end of the menu list -->
+            </nav> <!-- end of the nav -->
+        </div> <!-- end of the header container -->
+        <div class="header-divider"></div> <!-- the thin line under the header -->
+    </header> <!-- end of the header -->
+
+    <!-- main content (the middle part of the unit page) -->
+    <main> <!-- main holds the important content of the page, between header and footer -->
+
+        <!-- hero section, the banner with the unit picture and the title -->
+        <section class="hero-section"> <!-- the banner, the unit picture is its background (set in css) -->
+            <div class="hero-content"> <!-- box that holds the title inside the banner -->
+                <h1 class="hero-title">Explore the Unit</h1> <!-- the biggest title of the page -->
+            </div> <!-- end of the hero content -->
+        </section> <!-- end of the hero section -->
+
+        <!-- the 4 cards (bedspace, kitchen, bathroom, amenities) -->
+        <div class="unit-container"> <!-- big box that holds all 4 cards, stacked top to bottom -->
+
+            <!-- card 1, the bedspace -->
+            <section class="unit-card" id="bedspace"> <!-- the bedspace card, the id lets other links jump straight to this card -->
+                <div class="unit-card-grid"> <!-- grid that puts the gallery on the left and the info on the right -->
+                    <div class="gallery-wrapper portrait-gallery"> <!-- the photo gallery, portrait-gallery means the pictures are tall -->
+                        <div class="main-image-container"> <!-- box for the big picture and the arrows -->
+                            <button class="gallery-arrow prev-arrow" aria-label="Previous photo">❮</button> <!-- left arrow, shows the previous picture (script.js does the work) -->
+                            <img src="images/unit-bedroom-1.jpg" alt="Bedspace Main View" class="main-gallery-img"> <!-- the big picture, js changes this when you click a thumbnail -->
+                            <button class="gallery-arrow next-arrow" aria-label="Next photo">❯</button> <!-- right arrow, shows the next picture -->
+                        </div> <!-- end of the big picture box -->
+                        <div class="thumbnails-container mobile-thumbs"> <!-- small pictures shown under the big picture, mobile-thumbs means this copy only shows on phones -->
+                            <img src="images/unit-bedroom-1.jpg" alt="Bedspace Thumbnail 1" class="thumb-img active"> <!-- thumbnail 1, active means this is the one selected now -->
+                            <img src="images/unit-bedroom-2.jpg" alt="Bedspace Thumbnail 2" class="thumb-img"> <!-- thumbnail 2 -->
+                            <img src="images/unit-bedroom-3.jpg" alt="Bedspace Thumbnail 3" class="thumb-img"> <!-- thumbnail 3 -->
+                            <img src="images/unit-bedroom-4.jpg" alt="Bedspace Thumbnail 4" class="thumb-img"> <!-- thumbnail 4 -->
+                            <img src="images/unit-bedroom-5.jpg" alt="Bedspace Thumbnail 5" class="thumb-img"> <!-- thumbnail 5 -->
+                        </div> <!-- end of the phone thumbnails -->
+                    </div> <!-- end of the gallery -->
+                    <div class="unit-card-info"> <!-- the right side with the words -->
+                        <div class="info-top-content"> <!-- box for the title, description and list -->
+                            <h2 class="unit-card-title">Bedspace</h2> <!-- card title -->
+                            <p class="unit-card-description"> <!-- short description -->
+                                A cozy, restful space designed for comfortable shared living and quiet study sessions. <!-- what the bedspace is like -->
+                            </p> <!-- end of the description -->
+                            <h3 class="inclusions-title">Inclusions</h3> <!-- small title for the list below -->
+                            <ul class="star-list"> <!-- list of what is included (the ★ is added by css) -->
+                                <li>2 Bunk Beds with mattresses (sleeps 4)</li> <!-- inclusion -->
+                                <li>Built-In Stairs & safety guard rails</li> <!-- inclusion -->
+                                <li>City View Window with curtains</li> <!-- inclusion -->
+                                <li>Mirrored Wardrobes & storage drawers</li> <!-- inclusion -->
+                                <li>Unlimited Fiber WiFi</li> <!-- inclusion -->
+                                <li>Air Conditioner & standing fan</li> <!-- inclusion -->
+                                <li>Foldable Ladder tucked under the bed</li> <!-- inclusion -->
+                            </ul> <!-- end of the list -->
+                        </div> <!-- end of the title, description and list box -->
+                        <div class="thumbnails-container desktop-thumbs"> <!-- same small pictures again but this copy is for computers, desktop-thumbs hides on phones -->
+                            <img src="images/unit-bedroom-1.jpg" alt="Bedspace Thumbnail 1" class="thumb-img active"> <!-- thumbnail 1, selected -->
+                            <img src="images/unit-bedroom-2.jpg" alt="Bedspace Thumbnail 2" class="thumb-img"> <!-- thumbnail 2 -->
+                            <img src="images/unit-bedroom-3.jpg" alt="Bedspace Thumbnail 3" class="thumb-img"> <!-- thumbnail 3 -->
+                            <img src="images/unit-bedroom-4.jpg" alt="Bedspace Thumbnail 4" class="thumb-img"> <!-- thumbnail 4 -->
+                            <img src="images/unit-bedroom-5.jpg" alt="Bedspace Thumbnail 5" class="thumb-img"> <!-- thumbnail 5 -->
+                        </div> <!-- end of the computer thumbnails -->
+                    </div> <!-- end of the right side -->
+                </div> <!-- end of the card grid -->
+            </section> <!-- end of the bedspace card -->
+
+            <!-- card 2, the kitchen -->
+            <section class="unit-card" id="kitchen"> <!-- the kitchen card -->
+                <div class="unit-card-grid"> <!-- grid that puts the gallery on the left and the info on the right -->
+                    <div class="gallery-wrapper portrait-gallery"> <!-- the photo gallery with tall pictures -->
+                        <div class="main-image-container"> <!-- box for the big picture and the arrows -->
+                            <button class="gallery-arrow prev-arrow" aria-label="Previous photo">❮</button> <!-- left arrow -->
+                            <img src="images/unit-kitchen-1.jpg" alt="Kitchen Main View" class="main-gallery-img"> <!-- the big picture -->
+                            <button class="gallery-arrow next-arrow" aria-label="Next photo">❯</button> <!-- right arrow -->
+                        </div> <!-- end of the big picture box -->
+                        <div class="thumbnails-container mobile-thumbs"> <!-- small pictures for phones -->
+                            <img src="images/unit-kitchen-1.jpg" alt="Kitchen Thumbnail 1" class="thumb-img active"> <!-- thumbnail 1, selected -->
+                            <img src="images/unit-kitchen-2.jpg" alt="Kitchen Thumbnail 2" class="thumb-img"> <!-- thumbnail 2 -->
+                            <img src="images/unit-kitchen-3.jpg" alt="Kitchen Thumbnail 3" class="thumb-img"> <!-- thumbnail 3 -->
+                            <img src="images/unit-kitchen-4.jpg" alt="Kitchen Thumbnail 4" class="thumb-img"> <!-- thumbnail 4 -->
+                            <img src="images/unit-kitchen-5.jpg" alt="Kitchen Thumbnail 5" class="thumb-img"> <!-- thumbnail 5 -->
+                        </div> <!-- end of the phone thumbnails -->
+                    </div> <!-- end of the gallery -->
+                    <div class="unit-card-info"> <!-- the right side with the words -->
+                        <div class="info-top-content"> <!-- box for the title, description and list -->
+                            <h2 class="unit-card-title">Kitchen</h2> <!-- card title -->
+                            <p class="unit-card-description"> <!-- short description -->
+                                A warm, fully equipped kitchen and dining nook thoughtfully tailored for simple everyday meals. <!-- what the kitchen is like -->
+                            </p> <!-- end of the description -->
+                            <h3 class="inclusions-title">Inclusions</h3> <!-- small title for the list below -->
+                            <ul class="star-list"> <!-- list of what is included -->
+                                <li>Refrigerator & countertop toaster oven</li> <!-- inclusion -->
+                                <li>Microwave, Induction Stove & range hood</li> <!-- inclusion -->
+                                <li>Electric Kettle & rice cooker</li> <!-- inclusion -->
+                                <li>Sink & Overhead Dish Rack with complete cookware & utensils</li> <!-- inclusion -->
+                                <li>2-Seater Dining Table</li> <!-- inclusion -->
+                            </ul> <!-- end of the list -->
+                        </div> <!-- end of the title, description and list box -->
+                        <div class="thumbnails-container desktop-thumbs"> <!-- small pictures for computers -->
+                            <img src="images/unit-kitchen-1.jpg" alt="Kitchen Thumbnail 1" class="thumb-img active"> <!-- thumbnail 1, selected -->
+                            <img src="images/unit-kitchen-2.jpg" alt="Kitchen Thumbnail 2" class="thumb-img"> <!-- thumbnail 2 -->
+                            <img src="images/unit-kitchen-3.jpg" alt="Kitchen Thumbnail 3" class="thumb-img"> <!-- thumbnail 3 -->
+                            <img src="images/unit-kitchen-4.jpg" alt="Kitchen Thumbnail 4" class="thumb-img"> <!-- thumbnail 4 -->
+                            <img src="images/unit-kitchen-5.jpg" alt="Kitchen Thumbnail 5" class="thumb-img"> <!-- thumbnail 5 -->
+                        </div> <!-- end of the computer thumbnails -->
+                    </div> <!-- end of the right side -->
+                </div> <!-- end of the card grid -->
+            </section> <!-- end of the kitchen card -->
+
+            <!-- card 3, the bathroom -->
+            <section class="unit-card" id="bathroom"> <!-- the bathroom card -->
+                <div class="unit-card-grid"> <!-- grid that puts the gallery on the left and the info on the right -->
+                    <div class="gallery-wrapper portrait-gallery"> <!-- the photo gallery with tall pictures -->
+                        <div class="main-image-container"> <!-- box for the big picture and the arrows -->
+                            <button class="gallery-arrow prev-arrow" aria-label="Previous photo">❮</button> <!-- left arrow -->
+                            <img src="images/unit-bathroom-1.jpg" alt="Bathroom Main View" class="main-gallery-img"> <!-- the big picture -->
+                            <button class="gallery-arrow next-arrow" aria-label="Next photo">❯</button> <!-- right arrow -->
+                        </div> <!-- end of the big picture box -->
+                        <div class="thumbnails-container mobile-thumbs"> <!-- small pictures for phones -->
+                            <img src="images/unit-bathroom-1.jpg" alt="Bathroom Thumbnail 1" class="thumb-img active"> <!-- thumbnail 1, selected -->
+                            <img src="images/unit-bathroom-2.jpg" alt="Bathroom Thumbnail 2" class="thumb-img"> <!-- thumbnail 2 -->
+                            <img src="images/unit-bathroom-3.jpg" alt="Bathroom Thumbnail 3" class="thumb-img"> <!-- thumbnail 3 -->
+                            <img src="images/unit-bathroom-4.jpg" alt="Bathroom Thumbnail 4" class="thumb-img"> <!-- thumbnail 4 -->
+                            <img src="images/unit-bathroom-5.jpg" alt="Bathroom Thumbnail 5" class="thumb-img"> <!-- thumbnail 5 -->
+                        </div> <!-- end of the phone thumbnails -->
+                    </div> <!-- end of the gallery -->
+                    <div class="unit-card-info"> <!-- the right side with the words -->
+                        <div class="info-top-content"> <!-- box for the title, description and list -->
+                            <h2 class="unit-card-title">Bathroom</h2> <!-- card title -->
+                            <p class="unit-card-description"> <!-- short description -->
+                                A clean, functional bathroom equipped with a hot shower, modern fixtures, and built-in storage. <!-- what the bathroom is like -->
+                            </p> <!-- end of the description -->
+                            <h3 class="inclusions-title">Inclusions</h3> <!-- small title for the list below -->
+                            <ul class="star-list"> <!-- list of what is included -->
+                                <li>Hot & Cold Shower System (with water heater)</li> <!-- inclusion -->
+                                <li>Toilet & Bidet</li> <!-- inclusion -->
+                                <li>Wash Sink & Wall Shelf</li> <!-- inclusion -->
+                                <li>Compact Dryer Machine</li> <!-- inclusion -->
+                                <li>Overhead Storage Cabinets</li> <!-- inclusion -->
+                                <li>Trash Bin & Cleaning Essentials</li> <!-- inclusion -->
+                            </ul> <!-- end of the list -->
+                        </div> <!-- end of the title, description and list box -->
+                        <div class="thumbnails-container desktop-thumbs"> <!-- small pictures for computers -->
+                            <img src="images/unit-bathroom-1.jpg" alt="Bathroom Thumbnail 1" class="thumb-img active"> <!-- thumbnail 1, selected -->
+                            <img src="images/unit-bathroom-2.jpg" alt="Bathroom Thumbnail 2" class="thumb-img"> <!-- thumbnail 2 -->
+                            <img src="images/unit-bathroom-3.jpg" alt="Bathroom Thumbnail 3" class="thumb-img"> <!-- thumbnail 3 -->
+                            <img src="images/unit-bathroom-4.jpg" alt="Bathroom Thumbnail 4" class="thumb-img"> <!-- thumbnail 4 -->
+                            <img src="images/unit-bathroom-5.jpg" alt="Bathroom Thumbnail 5" class="thumb-img"> <!-- thumbnail 5 -->
+                        </div> <!-- end of the computer thumbnails -->
+                    </div> <!-- end of the right side -->
+                </div> <!-- end of the card grid -->
+            </section> <!-- end of the bathroom card -->
+
+            <!-- card 4, the amenities (this one is different, the pictures are wide and there is only one thumbnail row) -->
+            <section class="unit-card" id="amenities"> <!-- the amenities card -->
+                <div class="unit-card-grid"> <!-- grid that puts the gallery on the left and the info on the right -->
+                    <div class="gallery-wrapper landscape-gallery"> <!-- the photo gallery, landscape-gallery means the pictures are wide -->
+                        <div class="main-image-container"> <!-- box for the big picture and the arrows -->
+                            <button class="gallery-arrow prev-arrow" aria-label="Previous photo">❮</button> <!-- left arrow -->
+                            <img src="images/amenities-1.jpg" alt="Amenities Main View" class="main-gallery-img"> <!-- the big picture -->
+                            <button class="gallery-arrow next-arrow" aria-label="Next photo">❯</button> <!-- right arrow -->
+                        </div> <!-- end of the big picture box -->
+                        <div class="thumbnails-container"> <!-- small pictures, only one copy here so it shows on both computer and phone -->
+                            <img src="images/amenities-1.jpg" alt="Amenities Thumbnail 1" class="thumb-img active"> <!-- thumbnail 1, selected -->
+                            <img src="images/amenities-2.jpg" alt="Amenities Thumbnail 2" class="thumb-img"> <!-- thumbnail 2 -->
+                            <img src="images/amenities-3.jpg" alt="Amenities Thumbnail 3" class="thumb-img"> <!-- thumbnail 3 -->
+                            <img src="images/amenities-4.jpg" alt="Amenities Thumbnail 4" class="thumb-img"> <!-- thumbnail 4 -->
+                            <img src="images/amenities-5.jpg" alt="Amenities Thumbnail 5" class="thumb-img"> <!-- thumbnail 5 -->
+                        </div> <!-- end of the thumbnails -->
+                    </div> <!-- end of the gallery -->
+                    <div class="unit-card-info"> <!-- the right side with the words -->
+                        <div class="info-top-content"> <!-- box for the title, description, note and list -->
+                            <h2 class="unit-card-title">Amenities</h2> <!-- card title -->
+                            <p class="unit-card-description"> <!-- short description -->
+                                Enjoy free access to all building amenities designed for your comfort, study, and leisure. <!-- says the amenities are free to use -->
+                            </p> <!-- end of the description -->
+                            <p class="unit-card-note"> <!-- small italic note -->
+                                Please note: images shown highlight some amenities mostly located in Tower 2. <!-- tells that the pictures are mostly from Tower 2 -->
+                            </p> <!-- end of the note -->
+                            <h3 class="inclusions-title">Inclusions</h3> <!-- small title for the list below -->
+                            <ul class="star-list"> <!-- list of the amenities -->
+                                <li>Fully Equipped Fitness Gym</li> <!-- amenity -->
+                                <li>2 Swimming Pools</li> <!-- amenity -->
+                                <li>Quiet Study Areas</li> <!-- amenity -->
+                                <li>Grand Lobby & Reception</li> <!-- amenity -->
+                                <li>Function Room / Game Room</li> <!-- amenity -->
+                                <li>Children's Play Area</li> <!-- amenity -->
+                                <li>Outdoor Jogging Path</li> <!-- amenity -->
+                            </ul> <!-- end of the list -->
+                        </div> <!-- end of the title, description, note and list box -->
+                    </div> <!-- end of the right side -->
+                </div> <!-- end of the card grid -->
+            </section> <!-- end of the amenities card -->
+
+        </div> <!-- end of the box that holds the 4 cards -->
+
+        <!-- details to keep in mind section, the brown box with the language button -->
+        <div class="disclaimer-wrapper"> <!-- outer box that controls the width of the brown box -->
+            <section class="disclaimer-banner"> <!-- the brown box itself -->
+                <div class="disclaimer-inner"> <!-- inner box to keep the text from stretching too wide -->
+                    <div class="disclaimer-header-row"> <!-- row that holds the title and the language button -->
+                        <h2 class="disclaimer-title">Details to keep in mind</h2> <!-- title of the box -->
+                        <button id="langToggleBtn" class="lang-toggle-btn"> <!-- button to switch English/Tagalog, the id is how script.js finds it -->
+                            <strong>English</strong> / Tagalog <!-- English is bold because it is the language showing now -->
+                        </button> <!-- end of the language button -->
+                    </div> <!-- end of the header row -->
+                    <div id="unitDetailsContent" class="disclaimer-body"> <!-- the text, the id is used by script.js to change the text to Tagalog -->
+                        <ul class="star-list light-star-list"> <!-- list of details, light-star-list makes the text white so it shows on the brown -->
+                            <li>★ Some items in the photos (such as table covers, foam covers, or chairs) may change from time to time, but the overall structure and inclusions remain the same.</li> <!-- detail 1, the ★ is typed here because this list is not inside a card -->
+                            <li>★ The owner will always inform you beforehand if any fixture or appliance requires maintenance or repairs.</li> <!-- detail 2 -->
+                            <li>★ Current Notice: Please note that the lower kitchen cabinet is currently undergoing repairs and is temporarily not working as expected. We appreciate your patience while this is being finalized!</li> <!-- detail 3, a notice about the kitchen cabinet (remove or update when it is fixed) -->
+                        </ul> <!-- end of the list -->
+                    </div> <!-- end of the text -->
+                </div> <!-- end of the inner box -->
+            </section> <!-- end of the brown box -->
+        </div> <!-- end of the outer box -->
+
+        <!-- call to action section, the last box with the dashed border -->
+        <div class="cta-wrapper"> <!-- outer box that controls the width of the last box -->
+            <section class="cta-banner"> <!-- the box with the dashed border -->
+                <div class="cta-inner"> <!-- inner box to keep the text from stretching too wide -->
+                    <h2 class="cta-title">Interested in making our unit your new home?</h2> <!-- the big question -->
+                    <p class="cta-text cta-highlight">Kindly message the owner or the owner’s daughter on their personal Facebook Messenger accounts to schedule a unit viewing and check available move-in dates!</p> <!-- the bold message, cta-highlight makes it stand out -->
+                    <p class="cta-text">Please check the other pages for complete guidelines, location, and frequently asked questions.</p> <!-- normal message telling them to check the other pages -->
+                    <div class="cta-buttons"> <!-- box that holds the 3 buttons -->
+                        <a href="guidelines.html" class="cta-btn">View Guidelines</a> <!-- button to the guidelines page -->
+                        <a href="location.html" class="cta-btn">Check Location</a> <!-- button to the location page -->
+                        <a href="faqs.html" class="cta-btn">FAQs</a> <!-- button to the FAQs page -->
+                    </div> <!-- end of the buttons box -->
+                </div> <!-- end of the inner box -->
+            </section> <!-- end of the dashed box -->
+        </div> <!-- end of the outer box -->
+    </main> <!-- end of the main content -->
+
+    <!-- footer (the bottom part of every page) -->
+    <footer class="site-footer"> <!-- the bottom area of the website -->
+        <div class="footer-top-divider"></div> <!-- the line on top of the footer -->
+        <div class="footer-container"> <!-- box that holds the 3 columns of the footer -->
+            <div class="footer-column left"> <!-- left column -->
+                <h3 class="footer-heading">DISCLAIMER</h3> <!-- left column title -->
+                <p class="footer-text"> <!-- left column text -->
+                    Created and developed by a 3rd-Year BSIT Web Development student as an informational guide for our family's condo unit. <!-- says who made the website -->
+                </p> <!-- end of left text -->
+            </div> <!-- end of left column -->
+
+            <div class="footer-logo-col"> <!-- middle column for the logo -->
+                <img src="images/mfc-logo-footer.png" alt="MFC Units Footer Logo" class="footer-logo"> <!-- the logo picture in the footer -->
+            </div> <!-- end of middle column -->
+
+            <div class="footer-column right"> <!-- right column -->
+                <h3 class="footer-heading">CONTACT US</h3> <!-- right column title -->
+                <p class="footer-text"> <!-- right column text -->
+                    For security and privacy, direct contact details and inquiries are shared exclusively through our official Facebook Messenger tenant group chat. <!-- explains where to contact us -->
+                </p> <!-- end of right text -->
+            </div> <!-- end of right column -->
+        </div> <!-- end of the footer columns box -->
+
+        <div class="footer-mid-divider"></div> <!-- the line between the columns and the copyright -->
+
+        <div class="footer-copyright"> <!-- box for the copyright text -->
+            <p class="copyright-text"> <!-- the copyright text -->
+                &copy; 2026 MFC Units. All photos, logos, and content created and owned by Franchesca Zyreen Sison. All rights reserved. <!-- &copy; shows the © symbol -->
+            </p> <!-- end of the copyright text -->
+        </div> <!-- end of the copyright box -->
+    </footer> <!-- end of the footer -->
+
+    <!-- javascript file, placed at the bottom so the page loads first before the js runs -->
+    <script src="script.js"></script> <!-- connects script.js (hamburger menu, gallery arrows, language button, etc.) -->
+</body> <!-- end of the body -->
+</html> <!-- end of the whole page -->

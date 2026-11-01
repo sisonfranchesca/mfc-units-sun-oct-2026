@@ -1,0 +1,194 @@
+<!-- Franchesca Zyreen Sison (MFC Units - October 2026) -->
+<!-- over sa detailed na comments for future review use hehehehe -->
+ 
+<!DOCTYPE html> <!-- tells the browser this file is HTML5 -->
+<html lang="en"> <!-- start of the whole page, lang="en" means the page is in English -->
+<head> <!-- the head is for the page settings, it is not shown on the screen -->
+    <meta charset="UTF-8"> <!-- lets the page show all letters and symbols properly (like the ★) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit on phone screens -->
+    <title>MFC Units - Home</title> <!-- the text you see on the browser tab -->
+
+    <!-- links the shared css (header and footer), every page uses this one -->
+    <link rel="stylesheet" href="css/header-footer.css"> <!-- connects the header-footer css file -->
+
+    <!-- links the css that is only for this home page -->
+    <link rel="stylesheet" href="css/index.css"> <!-- connects the index css file -->
+
+    <!-- link preview tags (what people see when I send the link in chat, not sure if it would work tho muwehehe) -->
+    <meta property="og:title" content="MFC Units - Sun 2026" /> <!-- title in the preview -->
+    <meta property="og:description" content="A complete guide to our family's condo unit at Sun Residences, Quezon City." /> <!-- small text under the title -->
+    <meta property="og:image" content="https://mfc-units-sun-2026.vercel.app/images/unit-landscape.jpg" /> <!-- picture in the preview (domain prediction try lngs)-->
+    <meta property="og:url" content="https://mfc-units-sun-2026.vercel.app/" /> <!-- the official link of the website (prediction only WHAHAHAHA) -->
+    <meta property="og:type" content="website" /> <!-- this link is a website -->
+    <meta name="twitter:card" content="summary_large_image" /> <!-- makes the picture big on X/Twitter -->
+</head> <!-- end of the head -->
+
+<body> <!-- everything inside the body is what you see on the screen -->
+
+    <!-- header (the top part with logo and menu) -->
+    <header class="site-header"> <!-- the top bar of the website -->
+        <div class="header-container"> <!-- a box that holds the logo and the menu so I can arrange them -->
+            <a href="index.html" class="brand-link"> <!-- clicking the logo and name goes back to the home page -->
+                <img src="images/mfc-logo-header.png" alt="MFC Units Logo" class="header-logo"> <!-- the logo picture, alt is the text shown if the picture fails to load -->
+                <span class="brand-title">MFC UNITS</span> <!-- the name beside the logo -->
+            </a> <!-- end of the logo link -->
+
+            <button class="hamburger" aria-label="Toggle navigation"> <!-- the 3-line menu button, only shows on phones -->
+                <span></span> <!-- first line of the hamburger -->
+                <span></span> <!-- second line of the hamburger -->
+                <span></span> <!-- third line of the hamburger -->
+            </button> <!-- end of the hamburger button -->
+
+            <nav class="main-nav"> <!-- nav means navigation, this holds the menu links -->
+                <ul class="nav-list"> <!-- a list of the menu links -->
+                    <li><a href="index.html" class="nav-link" data-page="home">HOME</a></li> <!-- link to home page, data-page is used by the js to know which page it is -->
+                    <li><a href="about.html" class="nav-link" data-page="about">ABOUT US</a></li> <!-- link to the about page -->
+                    <li><a href="unit.html" class="nav-link" data-page="unit">UNIT</a></li> <!-- link to the unit page -->
+                    <li><a href="location.html" class="nav-link" data-page="location">LOCATION</a></li> <!-- link to the location page -->
+                    <li><a href="guidelines.html" class="nav-link" data-page="guidelines">GUIDELINES</a></li> <!-- link to the guidelines page -->
+                    <li><a href="faqs.html" class="nav-link" data-page="faqs">FAQs</a></li> <!-- link to the FAQs page -->
+                </ul> <!-- end of the menu list -->
+            </nav> <!-- end of the nav -->
+        </div> <!-- end of the header container -->
+        <div class="header-divider"></div> <!-- the thin line under the header -->
+    </header> <!-- end of the header -->
+
+    <!-- main content (the middle part of the home page) -->
+    <main> <!-- main holds the important content of the page, between header and footer -->
+
+        <!-- hero section, the big picture banner at the top with the welcome text -->
+        <section class="hero-section"> <!-- the banner, the building picture is its background (set in css) -->
+            <div class="hero-content"> <!-- box that holds the text inside the banner -->
+                <h1 class="hero-title">Welcome,<br>We're Glad You're Here!</h1> <!-- the biggest title, br makes a new line -->
+                <p class="hero-subtitle"> <!-- the small text under the title -->
+                    Managed with care by our family, this website serves as your complete informational guide for a cozy and comfortable stay in our unit. <!-- the welcome message -->
+                </p> <!-- end of the subtitle -->
+                <div class="hero-buttons"> <!-- box that holds the 3 buttons in the banner -->
+                    <a href="about.html" class="hero-btn">About Us</a> <!-- button that goes to the about page -->
+                    <a href="location.html" class="hero-btn">Check Location</a> <!-- button that goes to the location page -->
+                    <a href="unit.html" class="hero-btn">Explore Unit</a> <!-- button that goes to the unit page -->
+                </div> <!-- end of the hero buttons -->
+            </div> <!-- end of the hero content -->
+        </section> <!-- end of the hero section -->
+
+        <!-- get to know our unit section, the list on the left and picture on the right -->
+        <section class="unit-overview-section"> <!-- the whole unit overview part -->
+            <div class="unit-grid"> <!-- grid that puts the text and the picture side by side -->
+                <div class="unit-details"> <!-- the left side, has the title, list and buttons -->
+                    <div> <!-- a plain box to group the title and the list together -->
+                        <h2 class="section-title">Get to know our Unit</h2> <!-- the title of this section -->
+                        <ul class="unit-list"> <!-- the list of unit details -->
+                            <li>★ 20 sqm Studio Layout</li> <!-- size of the unit -->
+                            <li>★ Located on the 39th Floor</li> <!-- floor of the unit -->
+                            <li>★ Fully Furnished</li> <!-- the unit already has furniture -->
+                            <li>★ Accommodates up to 4 occupants only</li> <!-- max number of people allowed -->
+                            <li>★ Sun Residences by SMDC – Tower 2<br> <!-- name of the building, br moves the address to the next line -->
+                                <span class="address-block">Mayon St., Welcome Rotonda, Quezon City</span> <!-- the address, span lets me style just this text -->
+                            </li> <!-- end of the last list item -->
+                        </ul> <!-- end of the list -->
+                    </div> <!-- end of the title and list group -->
+                    <div class="section-buttons"> <!-- box for the 2 buttons below the list -->
+                        <a href="unit.html" class="section-btn">Explore Unit</a> <!-- button to the unit page -->
+                        <a href="location.html" class="section-btn">Check Location</a> <!-- button to the location page -->
+                    </div> <!-- end of the buttons box -->
+                </div> <!-- end of the left side -->
+                <div class="unit-image-wrapper"> <!-- the right side, a box around the picture so I can round the corners -->
+                    <img src="images/unit-landscape.jpg" alt="MFC Unit Interior Preview" class="unit-preview-img"> <!-- the picture of the unit inside -->
+                </div> <!-- end of the picture box -->
+            </div> <!-- end of the grid -->
+        </section> <!-- end of the unit overview section -->
+
+        <!-- everything you need to feel at home section, the 3 cards -->
+        <div class="home-features-container"> <!-- big box for the title and the 3 cards -->
+            <div class="home-features-banner"> <!-- box for the title part only -->
+                <div class="banner-inner"> <!-- inner box to keep the title centered and not too wide -->
+                    <h2 class="banner-title">Everything you need to feel at home!</h2> <!-- the title above the cards -->
+                    <p class="banner-subtitle">Visit other pages for more information.</p> <!-- small text under the title -->
+                </div> <!-- end of banner inner -->
+            </div> <!-- end of the title box -->
+            <div class="features-grid"> <!-- grid that arranges the 3 cards -->
+                <div class="feature-card"> <!-- card number 1 -->
+                    <div> <!-- groups the card title and text -->
+                        <h3>Meet Your Hosts</h3> <!-- card title -->
+                        <p>Three People, One Warm Welcome</p> <!-- card small text -->
+                    </div> <!-- end of the card text group -->
+                    <a href="about.html" class="card-btn">About Us</a> <!-- card button to the about page -->
+                </div> <!-- end of card 1 -->
+                <div class="feature-card"> <!-- card number 2 -->
+                    <div> <!-- groups the card title and text -->
+                        <h3>Settle In Smoothly</h3> <!-- card title -->
+                        <p>Everything You Need To Know</p> <!-- card small text -->
+                    </div> <!-- end of the card text group -->
+                    <a href="guidelines.html" class="card-btn">Guidelines</a> <!-- card button to the guidelines page -->
+                </div> <!-- end of card 2 -->
+                <div class="feature-card"> <!-- card number 3 -->
+                    <div> <!-- groups the card title and text -->
+                        <h3>Quick Answers</h3> <!-- card title -->
+                        <p>Frequently Asked Questions</p> <!-- card small text -->
+                    </div> <!-- end of the card text group -->
+                    <a href="faqs.html" class="card-btn">FAQs</a> <!-- card button to the FAQs page -->
+                </div> <!-- end of card 3 -->
+            </div> <!-- end of the cards grid -->
+        </div> <!-- end of the big features box -->
+
+        <!-- important notice and disclaimer section, the purple box with the language button -->
+        <div class="disclaimer-wrapper"> <!-- outer box that controls the width of the notice -->
+            <section class="disclaimer-banner"> <!-- the purple box itself -->
+                <div class="disclaimer-inner"> <!-- inner box to keep the text from stretching too wide -->
+                    <div class="disclaimer-header-row"> <!-- row that holds the title and the language button -->
+                        <h2 class="disclaimer-title">Important Notice & Disclaimer</h2> <!-- title of the notice -->
+                        <button id="langToggleBtn" class="lang-toggle-btn"> <!-- button to switch English/Tagalog, the id is how script.js finds it -->
+                            <strong>English</strong> / Tagalog <!-- English is bold because it is the language showing now -->
+                        </button> <!-- end of the language button -->
+                    </div> <!-- end of the header row -->
+                    <div id="disclaimerContent" class="disclaimer-body"> <!-- the notice text, the id is used by script.js to change the text to Tagalog -->
+                        <p>This website is an independent, personal informational guide created solely for our family's private condo unit. It is not affiliated with, endorsed by, or an official website of the building administration, property developer, or external map services. All details provided here are curated specifically to help our current and future tenants access unit information easily.</p> <!-- first paragraph, says this site is not official -->
+                        <p>As the owner maintains a busy schedule, we kindly encourage you to check this site first for answers regarding the unit, rules, and guidelines. If you need further assistance, please feel free to message us directly via our official Facebook Messenger tenant group chat or individual accounts. Thank you!</p> <!-- second paragraph, tells tenants to check the site first before messaging -->
+                    </div> <!-- end of the notice text -->
+                </div> <!-- end of the inner box -->
+            </section> <!-- end of the purple box -->
+        </div> <!-- end of the outer box -->
+
+        <!-- feedback section, the box with the rate website button -->
+        <section class="feedback-section"> <!-- white box with the dashed border -->
+            <p class="feedback-text">Have a moment? We'd love to hear your thoughts on our digital guide.</p> <!-- the message asking for feedback -->
+            <a href="https://forms.gle/jT58g1fERLmTxHMF8" target="_blank" rel="noopener noreferrer" class="feedback-btn">Rate Website</a> <!-- link to the google form, target="_blank" opens a new tab, rel is for safety -->
+        </section> <!-- end of the feedback section -->
+    </main> <!-- end of the main content -->
+
+    <!-- footer (the bottom part of every page) -->
+    <footer class="site-footer"> <!-- the bottom area of the website -->
+        <div class="footer-top-divider"></div> <!-- the line on top of the footer -->
+        <div class="footer-container"> <!-- box that holds the 3 columns of the footer -->
+            <div class="footer-column left"> <!-- left column -->
+                <h3 class="footer-heading">DISCLAIMER</h3> <!-- left column title -->
+                <p class="footer-text"> <!-- left column text -->
+                    Created and developed by a 3rd-Year BSIT Web Development student as an informational guide for our family's condo unit. <!-- says who made the website -->
+                </p> <!-- end of left text -->
+            </div> <!-- end of left column -->
+
+            <div class="footer-logo-col"> <!-- middle column for the logo -->
+                <img src="images/mfc-logo-footer.png" alt="MFC Units Footer Logo" class="footer-logo"> <!-- the logo picture in the footer -->
+            </div> <!-- end of middle column -->
+
+            <div class="footer-column right"> <!-- right column -->
+                <h3 class="footer-heading">CONTACT US</h3> <!-- right column title -->
+                <p class="footer-text"> <!-- right column text -->
+                    For security and privacy, direct contact details and inquiries are shared exclusively through our official Facebook Messenger tenant group chat. <!-- explains where to contact us -->
+                </p> <!-- end of right text -->
+            </div> <!-- end of right column -->
+        </div> <!-- end of the footer columns box -->
+
+        <div class="footer-mid-divider"></div> <!-- the line between the columns and the copyright -->
+
+        <div class="footer-copyright"> <!-- box for the copyright text -->
+            <p class="copyright-text"> <!-- the copyright text -->
+                &copy; 2026 MFC Units. All photos, logos, and content created and owned by Franchesca Zyreen Sison. All rights reserved. <!-- &copy; shows the © symbol -->
+            </p> <!-- end of the copyright text -->
+        </div> <!-- end of the copyright box -->
+    </footer> <!-- end of the footer -->
+
+    <!-- javascript file, it is placed at the bottom so the page loads first before the js runs -->
+    <script src="script.js"></script> <!-- connects script.js (hamburger menu, language button, etc.) -->
+</body> <!-- end of the body -->
+</html> <!-- end of the whole page -->

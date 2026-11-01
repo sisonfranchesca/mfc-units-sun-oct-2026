@@ -1,0 +1,356 @@
+/* Franchesca Zyreen Sison (MFC Units - October 2026) */
+
+/* main = the whole middle part of the page between header and footer */
+main {
+    background-color: #ffffff; /* white background */
+    width: 100%; /* takes the full width of the screen */
+    overflow-x: hidden; /* hides anything that goes outside the sides so no sideways scrolling */
+}
+
+/* hero section = the banner at the top with the building picture (same style as the home page) */
+.hero-section {
+    position: relative; /* needed so the purple overlay (::before) can sit inside this banner */
+    min-height: 280px; /* the banner is at least 280px tall */
+    display: flex; /* turns on flexbox so I can center the title */
+    align-items: center; /* centers the title up and down */
+    justify-content: center; /* centers the title left and right */
+    background-image: url('../images/building.jpg'); /* the building picture, ../ means go back one folder out of css */
+    background-size: cover; /* the picture fills the whole banner without stretching */
+    background-position: center; /* shows the center part of the picture */
+    background-repeat: no-repeat; /* the picture is not repeated */
+    width: 92%; /* the banner is 92% of the screen width */
+    max-width: 1200px; /* but never wider than 1200px on big screens */
+    margin: 20px auto 40px auto; /* top 20px, sides auto (centered), bottom 40px (order: top right bottom left) */
+    border-radius: 16px; /* rounded corners */
+    overflow: hidden; /* cuts the picture so it follows the rounded corners */
+    text-align: center; /* text in the middle */
+    padding: 40px 30px; /* space inside the banner: 40px up and down, 30px left and right */
+}
+
+/* ::before makes a fake extra layer, this is the purple color over the building picture */
+.hero-section::before {
+    content: ''; /* ::before needs this to show up, empty because it is only a color layer */
+    position: absolute; /* lets it sit on top of the banner */
+    top: 0; /* starts at the top edge */
+    left: 0; /* starts at the left edge */
+    width: 100%; /* covers the full width */
+    height: 100%; /* covers the full height */
+    background-color: rgba(95, 72, 98, 0.7); /* purple with 70% color (the last number 0.7) so the picture can still be seen */
+    z-index: 1; /* layer order, 1 means it is above the picture */
+}
+
+/* hero content = the box with the title inside the banner */
+.hero-content {
+    position: relative; /* needed so z-index works */
+    z-index: 2; /* higher than the purple layer so the title is on top and not covered */
+    max-width: 1100px; /* not wider than 1100px */
+    width: 100%; /* takes the full width it can */
+    margin: 0 auto; /* centers the box */
+}
+
+/* the big title "Check the Location" */
+.hero-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* the font, if Georgia is missing it uses the next one */
+    font-size: clamp(2.4rem, 4.5vw, 3.2rem); /* clamp = smallest, ideal, biggest size, so it grows or shrinks with the screen */
+    font-weight: 700; /* bold */
+    color: #ffffff; /* white text */
+    line-height: 1.15; /* space between lines of text */
+}
+
+/* location section = the building name, the 2 maps and the 2 lists */
+.location-container {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 35px auto; /* centered, 35px space at the bottom */
+}
+
+/* box for the building name and address */
+.location-header-block {
+    margin-bottom: 25px; /* space below the name and address */
+}
+
+/* title "Sun Residences Tower 2" */
+.main-location-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(2.1rem, 3.5vw, 2.7rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    margin-bottom: 4px; /* tiny space below the title */
+}
+
+/* the landmark text */
+.location-landmark {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the text */
+    font-size: 1.1rem; /* text size */
+    color: #826e85; /* light purple text */
+    margin-bottom: 8px; /* space below the text */
+}
+
+/* the full address */
+.full-address {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.05rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #554558; /* dark purple text */
+    line-height: 1.5; /* space between lines */
+}
+
+/* the rows that hold a map and a list (row 1 and row 2) */
+.location-grid-row {
+    display: grid; /* turns on grid layout */
+    grid-template-columns: 1fr 1fr; /* 2 columns with the same size */
+    gap: 25px; /* space between the map and the list */
+    align-items: center; /* centers them up and down */
+    margin-bottom: 35px; /* space below each row */
+}
+
+/* the box around each map */
+.map-wrapper {
+    width: 100%; /* full width of its column */
+    height: 350px; /* how tall the map is */
+    border-radius: 12px; /* rounded corners */
+    overflow: hidden; /* cuts the map to follow the rounded corners */
+    box-shadow: 0 4px 15px rgba(101, 81, 104, 0.12); /* soft shadow under the map */
+    border: 2px solid #826e85; /* light purple border */
+}
+
+/* the box that holds the title and the list */
+.info-content-col {
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the title and list top to bottom */
+    justify-content: center; /* puts them in the middle up and down */
+}
+
+/* titles of the lists ("Convenient Locations Near You", "Some Universities Near You") */
+.grid-section-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(1.8rem, 3vw, 2.3rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    margin-bottom: 14px; /* space below the title */
+    line-height: 1.2; /* space between lines */
+}
+
+/* the list with the stars (same style as the home page) */
+.star-list {
+    list-style: none; /* removes the default bullet dots (I used my own ★) */
+    padding: 0; /* removes the default left space of a list */
+    margin: 0; /* removes the default outside space */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the items top to bottom */
+    gap: 8px; /* space between each item */
+}
+
+/* each item in the star list */
+.star-list li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the list */
+    font-size: 1.02rem; /* text size */
+    color: #655168; /* purple text */
+    line-height: 1.5; /* space between lines */
+}
+
+/* finding your way around = the purple box with the language button */
+.disclaimer-wrapper {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 35px auto; /* centered, 35px space at the bottom */
+}
+
+/* the purple box itself */
+.disclaimer-banner {
+    background-color: #826e85; /* purple background */
+    width: 100%; /* full width */
+    border-radius: 16px; /* rounded corners */
+    padding: 40px 35px; /* space inside the box */
+    color: #ffffff; /* all text inside is white */
+}
+
+/* inner box so the text is not too wide */
+.disclaimer-inner {
+    max-width: 1100px; /* not wider than 1100px */
+    margin: 0 auto; /* centered */
+}
+
+/* the row with the title on the left and language button on the right */
+.disclaimer-header-row {
+    display: flex; /* puts the title and button in one row */
+    justify-content: space-between; /* title on the far left, button on the far right */
+    align-items: center; /* lines them up in the middle */
+    margin-bottom: 18px; /* space below the row */
+    flex-wrap: wrap; /* if no space, the button goes under the title */
+    gap: 12px; /* space between them */
+}
+
+/* title "Finding Your Way Around" */
+.disclaimer-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(1.8rem, 3vw, 2.4rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+}
+
+/* the English / Tagalog button */
+.lang-toggle-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button */
+    font-size: 0.85rem; /* text size */
+    background-color: transparent; /* no fill */
+    border: 2px solid #ffffff; /* white outline */
+    color: #ffffff; /* white text */
+    padding: 6px 18px; /* space inside the button */
+    border-radius: 20px; /* rounded corners */
+    cursor: pointer; /* the mouse turns into a hand when over it */
+    transition: all 0.25s ease; /* smooth change for everything when hovering */
+}
+
+/* when the mouse is over the language button */
+.lang-toggle-btn:hover {
+    background-color: #ffffff; /* fills with white */
+    color: #655168; /* text turns purple */
+}
+
+/* the paragraphs inside the purple box */
+.disclaimer-body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the paragraphs */
+    font-size: 0.98rem; /* text size */
+    line-height: 1.65; /* space between lines */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the paragraphs top to bottom */
+    gap: 14px; /* space between the paragraphs */
+}
+
+/* call to action section = the last part with the question and 3 buttons */
+.cta-section {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1100px; /* not wider than 1100px */
+    margin: 0 auto 40px auto; /* centered, 40px space at the bottom */
+    text-align: center; /* text in the middle */
+}
+
+/* the small note above the heading */
+.cta-note-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.02rem; /* text size */
+    color: #554558; /* dark purple text */
+    line-height: 1.55; /* space between lines */
+    max-width: 900px; /* keeps the text from getting too wide */
+    margin: 0 auto 25px auto; /* centered, 25px space below */
+}
+
+/* the big question "Are you ready to see..." */
+.cta-heading {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the heading */
+    font-size: clamp(1.9rem, 3.5vw, 2.6rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    margin-bottom: 20px; /* space below the heading */
+    line-height: 1.25; /* space between lines */
+}
+
+/* the box that holds the 3 buttons */
+.cta-buttons {
+    display: flex; /* puts the buttons in a row */
+    justify-content: center; /* buttons are in the middle */
+    flex-wrap: wrap; /* goes to the next line if no space */
+    gap: 14px; /* space between the buttons */
+}
+
+/* the 3 purple outline buttons */
+.cta-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button */
+    font-size: 0.9rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #655168; /* purple text */
+    background-color: transparent; /* no fill */
+    border: 2px solid #655168; /* purple outline */
+    padding: 10px 26px; /* space inside the button */
+    border-radius: 50px; /* big number makes it pill shaped */
+    text-decoration: none; /* removes the underline from the link */
+    text-transform: capitalize; /* first letter of each word is big */
+    display: inline-block; /* so padding works on the link */
+    white-space: nowrap; /* text stays on one line */
+    transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease; /* makes the hover change smooth and not sudden */
+}
+
+/* when the mouse is over a button */
+.cta-btn:hover {
+    transform: scale(1.08); /* gets a little bigger */
+    background-color: #655168; /* fills with purple */
+    color: #ffffff; /* text turns white */
+}
+
+/* phones (screens 850px and smaller) */
+/* @media = rules that only work when the screen matches the size I wrote */
+@media screen and (max-width: 850px) {
+    /* smaller banner on phones */
+    .hero-section {
+        width: 94%; /* a little wider so it fits the phone */
+        height: 180px; /* shorter banner */
+        min-height: 180px; /* and never shorter than 180px */
+        padding: 25px 16px; /* smaller space inside */
+        margin: 12px auto 20px auto; /* smaller spaces around */
+        border-radius: 12px; /* smaller rounded corners */
+    }
+
+    /* smaller title */
+    .hero-title {
+        font-size: 2rem; /* title size on phones */
+    }
+
+    /* these 3 sections share the same rule (the commas mean "all of these") */
+    .location-container,
+    .disclaimer-wrapper,
+    .cta-section {
+        width: 94%; /* a little wider so it fits the phone */
+    }
+
+    /* rows become 1 column (map and list stacked) */
+    .location-grid-row {
+        grid-template-columns: 1fr; /* only 1 column */
+        gap: 18px; /* smaller space between the map and list */
+        margin-bottom: 25px; /* smaller space below each row */
+    }
+
+    /* row 2 on phones, the list stays on top and the map goes below it */
+    .location-grid-row.reverse-mobile {
+        display: flex; /* switches from grid to flexbox */
+        flex-direction: column; /* stacks them top to bottom (list first, then map) */
+    }
+
+    /* shorter maps on phones */
+    .map-wrapper {
+        height: 260px; /* map height on phones */
+    }
+
+    /* the purple box on phones */
+    .disclaimer-banner {
+        border-radius: 12px; /* smaller rounded corners */
+        padding: 25px 16px; /* smaller space inside */
+    }
+
+    /* smaller purple box title */
+    .disclaimer-title {
+        font-size: 1.5rem; /* title size on phones */
+    }
+
+    /* smaller purple box text */
+    .disclaimer-body {
+        font-size: 0.9rem; /* text size on phones */
+    }
+
+    /* smaller call to action heading */
+    .cta-heading {
+      font-size: 1.7rem; /* heading size on phones */
+    }
+
+    /* buttons stacked */
+    .cta-buttons {
+        flex-direction: column; /* buttons go top to bottom */
+        align-items: stretch; /* buttons are as wide as the box */
+        gap: 10px; /* space between the buttons */
+    }
+
+    /* buttons full width */
+    .cta-btn {
+        width: 100%; /* full width button */
+        text-align: center; /* text in the middle */
+    }
+}

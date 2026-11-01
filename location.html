@@ -1,0 +1,171 @@
+<!-- Franchesca Zyreen Sison (MFC Units - October 2026) -->
+
+<!DOCTYPE html> <!-- tells the browser this file is HTML5 -->
+<html lang="en"> <!-- start of the whole page, lang="en" means the page is in English -->
+<head> <!-- the head is for the page settings, it is not shown on the screen -->
+    <meta charset="UTF-8"> <!-- lets the page show all letters and symbols properly (like the ★) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit on phone screens -->
+    <title>MFC Units - Location</title> <!-- the text you see on the browser tab -->
+
+    <!-- shared css, used by every page (header and footer) -->
+    <link rel="stylesheet" href="css/header-footer.css"> <!-- connects the header-footer css file -->
+
+    <!-- css that is only for this location page -->
+    <link rel="stylesheet" href="css/location.css"> <!-- connects the location css file -->
+</head> <!-- end of the head -->
+<body> <!-- everything inside the body is what you see on the screen -->
+
+    <!-- header (the top part with logo and menu) -->
+    <header class="site-header"> <!-- the top bar of the website -->
+        <div class="header-container"> <!-- a box that holds the logo and the menu so I can arrange them -->
+            <a href="index.html" class="brand-link"> <!-- clicking the logo and name goes back to the home page -->
+                <img src="images/mfc-logo-header.png" alt="MFC Units Logo" class="header-logo"> <!-- the logo picture, alt is the text shown if the picture fails to load -->
+                <span class="brand-title">MFC UNITS</span> <!-- the name beside the logo -->
+            </a> <!-- end of the logo link -->
+
+            <button class="hamburger" aria-label="Toggle navigation"> <!-- the 3-line menu button, only shows on phones -->
+                <span></span> <!-- first line of the hamburger -->
+                <span></span> <!-- second line of the hamburger -->
+                <span></span> <!-- third line of the hamburger -->
+            </button> <!-- end of the hamburger button -->
+
+            <nav class="main-nav"> <!-- nav means navigation, this holds the menu links -->
+                <ul class="nav-list"> <!-- a list of the menu links -->
+                    <li><a href="index.html" class="nav-link" data-page="home">HOME</a></li> <!-- link to home page, data-page is used by the js to know which page it is -->
+                    <li><a href="about.html" class="nav-link" data-page="about">ABOUT US</a></li> <!-- link to the about page -->
+                    <li><a href="unit.html" class="nav-link" data-page="unit">UNIT</a></li> <!-- link to the unit page -->
+                    <li><a href="location.html" class="nav-link" data-page="location">LOCATION</a></li> <!-- link to the location page -->
+                    <li><a href="guidelines.html" class="nav-link" data-page="guidelines">GUIDELINES</a></li> <!-- link to the guidelines page -->
+                    <li><a href="faqs.html" class="nav-link" data-page="faqs">FAQs</a></li> <!-- link to the FAQs page -->
+                </ul> <!-- end of the menu list -->
+            </nav> <!-- end of the nav -->
+        </div> <!-- end of the header container -->
+        <div class="header-divider"></div> <!-- the thin line under the header -->
+    </header> <!-- end of the header -->
+
+    <!-- main content (the middle part of the location page) -->
+    <main> <!-- main holds the important content of the page, between header and footer -->
+
+        <!-- hero section, the banner with the building picture and the title -->
+        <section class="hero-section"> <!-- the banner, the building picture is its background (set in css) -->
+            <div class="hero-content"> <!-- box that holds the title inside the banner -->
+                <h1 class="hero-title">Check the Location</h1> <!-- the biggest title of the page -->
+            </div> <!-- end of the hero content -->
+        </section> <!-- end of the hero section -->
+
+        <!-- location section, the address, the 2 maps and the 2 lists -->
+        <section class="location-container"> <!-- the whole location part -->
+            <div class="location-header-block"> <!-- box for the building name and address -->
+                <h2 class="main-location-title">Sun Residences Tower 2</h2> <!-- name of the building -->
+                <p class="location-landmark">Landmark: Welcome Rotonda Monument</p> <!-- a famous place nearby so people can find us easily -->
+                <p class="full-address">Sun Residences by SMDC – Tower 2 Mayon St., Welcome Rotonda, Quezon City</p> <!-- the full address -->
+            </div> <!-- end of the building name and address box -->
+
+            <!-- row 1, the map on the left and the places near us on the right -->
+            <div class="location-grid-row"> <!-- grid row that puts the map and the list side by side -->
+                <div class="map-wrapper"> <!-- box around the map (border and rounded corners are here) -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1930.3328192990896!2d121.00026362351498!3d14.618113496863963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7398b98ca3d%3A0x51af9318a85d5499!2sSun%20Residences%20Tower%202!5e0!3m2!1sen!2sph!4v1793193122911!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Sun Residences Tower 2 Location Map"></iframe> <!-- the google map of the condo, iframe shows another website inside my page. src = the map link, width/height 100% fills the box, style border:0 removes the border, allowfullscreen lets people open the map in full screen, loading="lazy" loads the map only when you scroll near it, referrerpolicy is for privacy, title is for screen readers -->
+                </div> <!-- end of the map box -->
+                <div class="info-content-col"> <!-- box for the title and the list -->
+                    <h3 class="grid-section-title">Convenient Locations Near You</h3> <!-- title of the list -->
+                    <ul class="star-list"> <!-- the list with the stars -->
+                        <li>★ McDonald's</li> <!-- place near the condo -->
+                        <li>★ Sun Mall</li> <!-- place near the condo -->
+                        <li>★ BDO Bank</li> <!-- place near the condo -->
+                        <li>★ Starbucks</li> <!-- place near the condo -->
+                        <li>★ 7-Eleven</li> <!-- place near the condo -->
+                        <li>★ Jollibee</li> <!-- place near the condo -->
+                        <li>★ Greenwich</li> <!-- place near the condo -->
+                        <li>★ Burger King</li> <!-- place near the condo -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of the title and list box -->
+            </div> <!-- end of row 1 -->
+
+            <!-- row 2, the universities list on the left and the map on the right -->
+            <div class="location-grid-row reverse-mobile"> <!-- grid row, reverse-mobile is a class that changes the layout on phones (set in css) -->
+                <div class="info-content-col"> <!-- box for the title and the list -->
+                    <h3 class="grid-section-title">Some Universities Near You</h3> <!-- title of the list -->
+                    <ul class="star-list"> <!-- the list with the stars -->
+                        <li>★ University of Santo Tomas (UST)</li> <!-- university near the condo -->
+                        <li>★ The University of Manila (UM)</li> <!-- university near the condo -->
+                        <li>★ Perpetual Help College</li> <!-- university near the condo -->
+                        <li>★ National University (NU)</li> <!-- university near the condo -->
+                        <li>★ Trinity University of Asia (TUA)</li> <!-- university near the condo -->
+                        <li>★ Far Eastern University (FEU)</li> <!-- university near the condo -->
+                        <li>★ University of the East (UE)</li> <!-- university near the condo -->
+                    </ul> <!-- end of the list -->
+                </div> <!-- end of the title and list box -->
+                <div class="map-wrapper"> <!-- box around the second map -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d909.4031347983876!2d121.00054167565143!3d14.617983484305386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1suniversities%20near%20sun%20residences%20tower%202!5e0!3m2!1sen!2sph!4v1793193221304!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Universities Near Sun Residences Map"></iframe> <!-- the google map of the universities, it works the same as the first map above -->
+                </div> <!-- end of the map box -->
+            </div> <!-- end of row 2 -->
+        </section> <!-- end of the location section -->
+
+        <!-- finding your way around section, the purple box with the language button -->
+        <div class="disclaimer-wrapper"> <!-- outer box that controls the width of the purple box -->
+            <section class="disclaimer-banner"> <!-- the purple box itself -->
+                <div class="disclaimer-inner"> <!-- inner box to keep the text from stretching too wide -->
+                    <div class="disclaimer-header-row"> <!-- row that holds the title and the language button -->
+                        <h2 class="disclaimer-title">Finding Your Way Around</h2> <!-- title of the box -->
+                        <button id="langToggleBtn" class="lang-toggle-btn"> <!-- button to switch English/Tagalog, the id is how script.js finds it -->
+                            <strong>English</strong> / Tagalog <!-- English is bold because it is the language showing now -->
+                        </button> <!-- end of the language button -->
+                    </div> <!-- end of the header row -->
+                    <div id="wayAroundContent" class="disclaimer-body"> <!-- the text, the id is used by script.js to change the text to Tagalog -->
+                        <p>Navigating around the area is very convenient, with plenty of public jeepneys, buses, UV Express vans, and tricycles passing through nearby streets to take you to these destinations and surrounding universities.</p> <!-- first paragraph, says it is easy to commute -->
+                        <p>As routes and jeepney signboards can vary depending on where you are heading, we recommend checking your exact destination on Google Maps or asking local drivers/guards for the best direct route. The interactive maps above are pinned for the specific key landmarks and schools listed here to help you get started easily!</p> <!-- second paragraph, tells people to double check their route -->
+                    </div> <!-- end of the text -->
+                </div> <!-- end of the inner box -->
+            </section> <!-- end of the purple box -->
+        </div> <!-- end of the outer box -->
+
+        <!-- call to action section, the last part with the 3 buttons -->
+        <section class="cta-section"> <!-- cta means call to action, it pushes the visitor to click something -->
+            <p class="cta-note-text"> <!-- small note above the heading -->
+                The spots listed above are just a few of the popular commercial hubs, food options, and universities near the condo. There are many more everyday conveniences just a short walk away! <!-- says there are more places nearby than the ones listed -->
+            </p> <!-- end of the note -->
+            <h2 class="cta-heading">Are you ready to see your potential home away from home?</h2> <!-- the big question -->
+            <div class="cta-buttons"> <!-- box that holds the 3 buttons -->
+                <a href="unit.html" class="cta-btn">Explore Unit</a> <!-- button to the unit page -->
+                <a href="guidelines.html" class="cta-btn">View Guidelines</a> <!-- button to the guidelines page -->
+                <a href="faqs.html" class="cta-btn">FAQs</a> <!-- button to the FAQs page -->
+            </div> <!-- end of the buttons box -->
+        </section> <!-- end of the call to action section -->
+    </main> <!-- end of the main content -->
+
+    <!-- footer (the bottom part of every page) -->
+    <footer class="site-footer"> <!-- the bottom area of the website -->
+        <div class="footer-top-divider"></div> <!-- the line on top of the footer -->
+        <div class="footer-container"> <!-- box that holds the 3 columns of the footer -->
+            <div class="footer-column left"> <!-- left column -->
+                <h3 class="footer-heading">DISCLAIMER</h3> <!-- left column title -->
+                <p class="footer-text"> <!-- left column text -->
+                    Created and developed by a 3rd-Year BSIT Web Development student as an informational guide for our family's condo unit. <!-- says who made the website -->
+                </p> <!-- end of left text -->
+            </div> <!-- end of left column -->
+
+            <div class="footer-logo-col"> <!-- middle column for the logo -->
+                <img src="images/mfc-logo-footer.png" alt="MFC Units Footer Logo" class="footer-logo"> <!-- the logo picture in the footer -->
+            </div> <!-- end of middle column -->
+
+            <div class="footer-column right"> <!-- right column -->
+                <h3 class="footer-heading">CONTACT US</h3> <!-- right column title -->
+                <p class="footer-text"> <!-- right column text -->
+                    For security and privacy, direct contact details and inquiries are shared exclusively through our official Facebook Messenger tenant group chat. <!-- explains where to contact us -->
+                </p> <!-- end of right text -->
+            </div> <!-- end of right column -->
+        </div> <!-- end of the footer columns box -->
+
+        <div class="footer-mid-divider"></div> <!-- the line between the columns and the copyright -->
+
+        <div class="footer-copyright"> <!-- box for the copyright text -->
+            <p class="copyright-text"> <!-- the copyright text -->
+                &copy; 2026 MFC Units. All photos, logos, and content created and owned by Franchesca Zyreen Sison. All rights reserved. <!-- &copy; shows the © symbol -->
+            </p> <!-- end of the copyright text -->
+        </div> <!-- end of the copyright box -->
+    </footer> <!-- end of the footer -->
+
+    <!-- javascript file, placed at the bottom so the page loads first before the js runs -->
+    <script src="script.js"></script> <!-- connects script.js (hamburger menu, language button, etc.) -->
+</body> <!-- end of the body -->
+</html> <!-- end of the whole page -->

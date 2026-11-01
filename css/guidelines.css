@@ -1,0 +1,465 @@
+/* Franchesca Zyreen Sison (MFC Units - October 2026) */
+
+/* main = the whole middle part of the page between header and footer */
+main {
+    background-color: #ffffff; /* white background */
+    width: 100%; /* takes the full width of the screen */
+    overflow-x: hidden; /* hides anything that goes outside the sides so no sideways scrolling */
+    padding-bottom: 20px; /* space at the bottom inside main, before the footer */
+}
+
+/* hero section = the banner at the top with the guidelines picture */
+.hero-section {
+    position: relative; /* needed so the green overlay (::before) can sit inside this banner */
+    height: 280px; /* the banner is exactly 280px tall */
+    min-height: 280px; /* and never shorter than 280px */
+    display: flex; /* turns on flexbox so I can center the title */
+    align-items: center; /* centers the title up and down */
+    justify-content: center; /* centers the title left and right */
+    background-color: #226635; /* green color shown while the picture is still loading */
+    background-image: url('../images/guidelines.jpg'); /* the guidelines picture, ../ means go back one folder out of css */
+    background-size: cover; /* the picture fills the whole banner without stretching */
+    background-position: center; /* shows the center part of the picture */
+    background-repeat: no-repeat; /* the picture is not repeated */
+    width: 92%; /* the banner is 92% of the screen width */
+    max-width: 1200px; /* but never wider than 1200px on big screens */
+    margin: 20px auto 30px auto; /* top 20px, sides auto (centered), bottom 30px (order: top right bottom left) */
+    border-radius: 16px; /* rounded corners */
+    overflow: hidden; /* cuts the picture so it follows the rounded corners */
+    text-align: center; /* text in the middle */
+    padding: 0 30px; /* no space on top and bottom, 30px on the left and right */
+}
+
+/* ::before makes a fake extra layer, this is the green color over the picture */
+.hero-section::before {
+    content: ''; /* ::before needs this to show up, empty because it is only a color layer */
+    position: absolute; /* lets it sit on top of the banner */
+    top: 0; /* starts at the top edge */
+    left: 0; /* starts at the left edge */
+    width: 100%; /* covers the full width */
+    height: 100%; /* covers the full height */
+    background-color: rgba(34, 102, 53, 0.35); /* green with 35% color (the last number 0.35) so the picture can still be seen */
+    z-index: 1; /* layer order, 1 means it is above the picture */
+}
+
+/* hero content = the box with the title inside the banner */
+.hero-content {
+    position: relative; /* needed so z-index works */
+    z-index: 2; /* higher than the green layer so the title is on top and not covered */
+    max-width: 1100px; /* not wider than 1100px */
+    width: 100%; /* takes the full width it can */
+    margin: 0 auto; /* centers the box */
+}
+
+/* the big title "Guidelines" */
+.hero-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* the font, if Georgia is missing it uses the next one */
+    font-size: clamp(2.6rem, 4.8vw, 3.5rem); /* clamp = smallest, ideal, biggest size, so it grows or shrinks with the screen */
+    font-weight: 700; /* bold */
+    color: #ffffff; /* white text */
+    line-height: 1.15; /* space between lines of text */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); /* soft dark shadow behind the letters so they are easier to read on the picture */
+}
+
+/* intro section = the title "Everything You Need To Know!" and the line */
+.guidelines-intro-container {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 25px auto; /* centered, 25px space at the bottom */
+    text-align: center; /* text in the middle */
+}
+
+/* box that holds the title and the line */
+.intro-header-block {
+    margin-bottom: 8px; /* space below this part */
+}
+
+/* the title "Everything You Need To Know!" */
+.section-main-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(2.2rem, 3.8vw, 2.9rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #596757; /* dark green text */
+    margin-bottom: 12px; /* space between the title and the line */
+    line-height: 1.2; /* space between lines of text */
+}
+
+/* the line under the title */
+.title-divider {
+    width: 100%; /* line is as wide as its box */
+    max-width: 1200px; /* but not wider than 1200px */
+    height: 3px; /* how thick the line is */
+    background-color: #596757; /* dark green line */
+    margin: 0 auto; /* centered */
+}
+
+/* the big box that holds all the guideline cards */
+.guidelines-content-wrapper {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 25px auto; /* centered, 25px space at the bottom */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the cards top to bottom */
+    gap: 35px; /* space between the cards */
+}
+
+/* each guideline card (the box with the border) */
+.guideline-card {
+    position: relative; /* needed so the title can be placed using top and left of this card */
+    margin-top: clamp(55px, 9vw, 75px); /* empty space above the card, this is where the title sits (it grows or shrinks with the screen) */
+    padding: 28px 24px; /* space inside the card */
+    border-radius: 8px; /* rounded corners */
+}
+
+/* the cards with a straight border line */
+.solid-border {
+    border: 5px solid #9da58b; /* thick sage green solid border */
+}
+
+/* the cards with a broken border line */
+.dashed-border {
+    border: 5px dashed #9da58b; /* thick sage green dashed border */
+}
+
+/* the card titles (MOVE-IN PROCESS, DAY OF MOVE-IN, etc.), they sit above the border */
+.guideline-card .block-title {
+    position: absolute; /* takes the title out of the normal flow so I can place it freely */
+    top: 0; /* starts at the top edge of the card */
+    left: 0; /* starts at the left edge of the card */
+    transform: translateY(-135%); /* moves the title UP by 135% of its own height so it sits right above the border */
+    background-color: transparent; /* no background */
+    padding: 0; /* no space inside */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(1.3rem, 2.8vw, 2.1rem); /* size that adjusts from phone to computer */
+    font-weight: 700; /* bold */
+    color: #596757; /* dark green text */
+    margin: 0; /* no outside space */
+    line-height: 1.2; /* space between lines of text */
+    width: 100%; /* as wide as the card */
+}
+
+/* each step inside a card (like "1. Reservation Payment:") */
+.guideline-step {
+    margin-bottom: 26px; /* space below each step */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the step title and the list top to bottom */
+}
+
+/* the last step in a card does not need space below */
+.guideline-step:last-child {
+    margin-bottom: 0; /* removes the space below */
+}
+
+/* the step titles (1. Reservation Payment:, etc.) */
+.guideline-step h3 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the step title */
+    font-size: 1.22rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #596757; /* dark green text */
+    margin-bottom: 12px; /* space below the step title */
+    display: block; /* takes its own line */
+    width: 100%; /* full width */
+    -webkit-font-smoothing: antialiased; /* makes the letters look smoother on Mac/iPhone */
+}
+
+/* the lists inside the steps */
+.guideline-step ul {
+    list-style: none; /* removes the default bullet dots */
+    padding-left: 20px; /* space on the left of the list */
+    margin: 0; /* removes the default outside space */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the items top to bottom */
+    gap: 12px; /* space between each item */
+}
+
+/* each item in the cards */
+.guideline-card li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the list */
+    font-size: 1.15rem; /* text size */
+    font-weight: 400; /* normal, not bold */
+    color: #596757; /* dark green text */
+    line-height: 1.75; /* space between lines */
+    text-align: justify; /* both edges of the text are straight */
+    position: relative; /* needed so the star (::before) can be placed using left and top */
+    padding-left: 24px; /* empty space on the left where the star will sit */
+    -webkit-font-smoothing: antialiased; /* makes the letters look smoother on Mac/iPhone */
+}
+
+/* the bold words inside the list (the strong tags in the html) */
+.guideline-card li strong {
+    font-weight: 700; /* bold */
+}
+
+/* the star in front of each list item, css adds it so I do not need to type ★ in the html */
+.guideline-card li::before {
+    content: "★"; /* the star symbol that will show */
+    position: absolute; /* lets me place the star exactly using left and top */
+    left: 0; /* star sits at the far left */
+    top: 1px; /* moves the star down 1px so it lines up with the text */
+    color: #596757; /* dark green star */
+    font-size: 0.95rem; /* star size */
+}
+
+/* the smaller lists inside a list (sub-list) */
+.guideline-card ul.sub-list {
+    margin-top: 10px; /* space above the smaller list */
+    margin-bottom: 8px; /* space below the smaller list */
+    padding-left: 15px; /* moves the smaller list to the right so it looks tucked in */
+    gap: 10px; /* space between the items */
+}
+
+/* the items of the smaller lists */
+.guideline-card ul.sub-list li {
+    font-size: 1.08rem; /* a little smaller text */
+    padding-left: 20px; /* a little less space for the star */
+}
+
+/* the green links to the Sun Residences forms */
+.external-link {
+    color: #009f10; /* bright green text */
+    font-weight: 500; /* a little bold */
+    text-decoration: underline; /* underline so people know it is a link */
+    transition: opacity 0.2s ease; /* smooth fade when hovering */
+}
+
+/* when the mouse is over the link */
+.external-link:hover {
+    opacity: 0.8; /* a little see-through */
+}
+
+/* need help banner = the sage green box with the FAQs button */
+.help-banner-wrapper {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 25px auto; /* centered, 25px space at the bottom */
+}
+
+/* the green box itself */
+.help-banner {
+    background-color: #9da58b; /* sage green background */
+    width: 100%; /* full width */
+    border-radius: 16px; /* rounded corners */
+    padding: 35px 40px; /* space inside the box */
+    color: #ffffff; /* all text inside is white */
+}
+
+/* inner box that holds the text and button */
+.help-inner {
+    max-width: 1100px; /* not wider than 1100px */
+    margin: 0 auto; /* centered */
+    display: flex; /* turns on flexbox */
+    flex-direction: column; /* stacks the things top to bottom */
+    gap: 12px; /* space between them */
+}
+
+/* title "Need help?" */
+.help-title {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* font of the title */
+    font-size: clamp(2.1rem, 3.6vw, 2.8rem); /* size that adjusts to the screen */
+    font-weight: 700; /* bold */
+    color: #ffffff; /* white text */
+    margin-bottom: 0; /* no space below (the gap above already makes space) */
+    line-height: 1.2; /* space between lines */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); /* soft shadow so the white text is easier to see on the green */
+}
+
+/* the text under the title */
+.help-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.2rem; /* text size */
+    font-weight: 400; /* normal, not bold */
+    color: #ffffff; /* white text */
+    line-height: 1.6; /* space between lines */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); /* soft shadow so the white text is easier to see */
+}
+
+/* the box that holds the button */
+.help-buttons {
+    display: flex; /* turns on flexbox */
+    justify-content: flex-start; /* button starts from the left */
+    flex-wrap: wrap; /* goes to the next line if no space */
+    gap: 15px; /* space between buttons */
+    margin-top: 5px; /* a little space above */
+}
+
+/* the white outline button */
+.help-btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the button */
+    font-size: 0.95rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #ffffff; /* white text */
+    background-color: transparent; /* no fill, you can see through it */
+    border: 2px solid #ffffff; /* white outline */
+    padding: 10px 28px; /* space inside the button */
+    border-radius: 50px; /* big number makes it pill shaped */
+    text-decoration: none; /* removes the underline from the link */
+    text-transform: capitalize; /* first letter of each word is big */
+    display: inline-block; /* so padding works on the link */
+    white-space: nowrap; /* text stays on one line */
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease; /* makes the hover change smooth and not sudden */
+}
+
+/* when the mouse is over the button */
+.help-btn:hover {
+    transform: scale(1.08); /* gets a little bigger */
+    background-color: #596757; /* fills with dark green */
+    border-color: #596757; /* border becomes dark green too */
+    color: #ffffff; /* text stays white */
+}
+
+/* sun residences notice = the small note at the very bottom */
+.sun-notice-section {
+    width: 92%; /* 92% of the screen width */
+    max-width: 1200px; /* not wider than 1200px */
+    margin: 0 auto 10px auto; /* centered, 10px space at the bottom */
+    text-align: center; /* text in the middle */
+    padding: 0; /* no space inside */
+}
+
+/* the notice paragraph */
+.sun-notice-text {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the text */
+    font-size: 1.18rem; /* text size */
+    color: #596757; /* dark green text */
+    line-height: 1.8; /* space between lines */
+    margin-bottom: 12px; /* space below the paragraph */
+    width: 100%; /* full width */
+    margin-left: auto; /* left side auto, helps center it */
+    margin-right: auto; /* right side auto, helps center it */
+    text-align: justify; /* both edges of the text are straight */
+}
+
+/* the paragraph that holds the link */
+.sun-link-wrapper {
+    margin: 0; /* removes the default outside space */
+    text-align: center; /* link in the middle */
+}
+
+/* the link to the official Sun Residences website */
+.sun-official-link {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* font of the link */
+    font-size: 0.98rem; /* text size */
+    font-weight: 700; /* bold */
+    color: #009f10; /* bright green text */
+    text-decoration: underline; /* underline so people know it is a link */
+    transition: opacity 0.2s ease; /* smooth fade when hovering */
+    display: inline-block; /* so spacing works properly on the link */
+}
+
+/* when the mouse is over the link */
+.sun-official-link:hover {
+    opacity: 0.8; /* a little see-through */
+}
+
+/* phones (screens 850px and smaller) */
+/* @media = rules that only work when the screen matches the size I wrote */
+@media screen and (max-width: 850px) {
+    /* smaller banner on phones */
+    .hero-section {
+        width: 94%; /* a little wider so it fits the phone */
+        height: 180px; /* shorter banner */
+        min-height: 180px; /* and never shorter than 180px */
+        padding: 0 15px; /* smaller space on the sides */
+        margin: 10px auto 15px auto; /* smaller spaces around */
+        border-radius: 12px; /* smaller rounded corners */
+    }
+
+    /* smaller title */
+    .hero-title {
+        font-size: 1.8rem; /* title size on phones */
+    }
+
+    /* these 4 sections share the same rule (the commas mean "all of these") */
+    .guidelines-intro-container,
+    .guidelines-content-wrapper,
+    .help-banner-wrapper,
+    .sun-notice-section {
+        width: 94%; /* a little wider so it fits the phone */
+        margin-bottom: 15px; /* smaller space below */
+    }
+
+    /* smaller space between cards */
+    .guidelines-content-wrapper {
+        gap: 30px; /* space between the cards on phones */
+    }
+
+    /* the cards on phones */
+    .guideline-card {
+        padding: 16px 14px; /* smaller space inside */
+        border-radius: 12px; /* bigger rounded corners */
+        border-width: 4px; /* thinner border */
+    }
+
+    /* less space between steps */
+    .guideline-step {
+        margin-bottom: 14px; /* smaller space below each step */
+    }
+
+    /* smaller step titles */
+    .guideline-step h3 {
+        font-size: 1.08rem; /* text size on phones */
+        margin-bottom: 8px; /* smaller space below */
+    }
+
+    /* lists on phones */
+    .guideline-step ul {
+        padding-left: 14px; /* smaller space on the left */
+    }
+
+    /* smaller list text */
+    .guideline-card li {
+        font-size: 0.98rem; /* text size on phones */
+    }
+
+    /* smaller text for the smaller lists */
+    .guideline-card ul.sub-list li {
+        font-size: 0.94rem; /* text size on phones */
+    }
+
+    /* the green box on phones */
+    .help-banner {
+        border-radius: 12px; /* smaller rounded corners */
+        padding: 22px 16px; /* smaller space inside */
+    }
+
+    /* smaller green box title */
+    .help-title {
+        font-size: 1.5rem; /* title size on phones */
+    }
+
+    /* smaller green box text */
+    .help-text {
+        font-size: 0.95rem; /* text size on phones */
+        font-weight: 400; /* normal, not bold */
+    }
+
+    /* button stacked */
+    .help-buttons {
+        flex-direction: column; /* buttons go top to bottom */
+        align-items: stretch; /* buttons are as wide as the box */
+        gap: 10px; /* space between the buttons */
+    }
+
+    /* button full width */
+    .help-btn {
+        width: 100%; /* full width button */
+        text-align: center; /* text in the middle */
+    }
+
+    /* less space under the notice */
+    .sun-notice-section {
+        margin-bottom: 5px; /* smaller space below */
+    }
+
+    /* smaller notice text */
+    .sun-notice-text {
+        font-size: 0.92rem; /* text size on phones */
+        text-align: justify; /* both edges of the text are straight */
+        margin-bottom: 8px; /* smaller space below */
+    }
+
+    /* smaller link text */
+    .sun-official-link {
+        font-size: 0.82rem; /* text size on phones */
+    }
+}

@@ -1,0 +1,174 @@
+<!-- Franchesca Zyreen Sison (MFC Units - October 2026) -->
+
+<!DOCTYPE html> <!-- tells the browser this file is HTML5 -->
+<html lang="en"> <!-- start of the whole page, lang="en" means the page is in English -->
+<head> <!-- the head is for the page settings, it is not shown on the screen -->
+    <meta charset="UTF-8"> <!-- lets the page show all letters and symbols properly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- makes the page fit on phone screens -->
+    <title>MFC Units - About Us</title> <!-- the text you see on the browser tab -->
+
+    <link rel="preload" href="images/hosts.jpg" as="image"> <!-- tells the browser to load the hero picture early so the banner does not appear late -->
+
+    <!-- shared css, used by every page (header and footer) -->
+    <link rel="stylesheet" href="css/header-footer.css"> <!-- connects the header-footer css file -->
+
+    <!-- css that is only for this about page -->
+    <link rel="stylesheet" href="css/about.css"> <!-- connects the about css file -->
+</head> <!-- end of the head -->
+<body> <!-- everything inside the body is what you see on the screen -->
+
+    <!-- header (the top part with logo and menu) -->
+    <header class="site-header"> <!-- the top bar of the website -->
+        <div class="header-container"> <!-- a box that holds the logo and the menu so I can arrange them -->
+            <a href="index.html" class="brand-link"> <!-- clicking the logo and name goes back to the home page -->
+                <img src="images/mfc-logo-header.png" alt="MFC Units Logo" class="header-logo"> <!-- the logo picture, alt is the text shown if the picture fails to load -->
+                <span class="brand-title">MFC UNITS</span> <!-- the name beside the logo -->
+            </a> <!-- end of the logo link -->
+
+            <button class="hamburger" aria-label="Toggle navigation"> <!-- the 3-line menu button, only shows on phones -->
+                <span></span> <!-- first line of the hamburger -->
+                <span></span> <!-- second line of the hamburger -->
+                <span></span> <!-- third line of the hamburger -->
+            </button> <!-- end of the hamburger button -->
+
+            <nav class="main-nav"> <!-- nav means navigation, this holds the menu links -->
+                <ul class="nav-list"> <!-- a list of the menu links -->
+                    <li><a href="index.html" class="nav-link" data-page="home">HOME</a></li> <!-- link to home page, data-page is used by the js to know which page it is -->
+                    <li><a href="about.html" class="nav-link" data-page="about">ABOUT US</a></li> <!-- link to the about page -->
+                    <li><a href="unit.html" class="nav-link" data-page="unit">UNIT</a></li> <!-- link to the unit page -->
+                    <li><a href="location.html" class="nav-link" data-page="location">LOCATION</a></li> <!-- link to the location page -->
+                    <li><a href="guidelines.html" class="nav-link" data-page="guidelines">GUIDELINES</a></li> <!-- link to the guidelines page -->
+                    <li><a href="faqs.html" class="nav-link" data-page="faqs">FAQs</a></li> <!-- link to the FAQs page -->
+                </ul> <!-- end of the menu list -->
+            </nav> <!-- end of the nav -->
+        </div> <!-- end of the header container -->
+        <div class="header-divider"></div> <!-- the thin line under the header -->
+    </header> <!-- end of the header -->
+
+    <!-- main content (the middle part of the about page) -->
+    <main> <!-- main holds the important content of the page, between header and footer -->
+
+        <!-- hero section, the banner with the hosts picture and the title -->
+        <section class="hero-section"> <!-- the banner, the hosts.jpg picture is its background (set in css) -->
+            <div class="hero-content"> <!-- box that holds the title inside the banner -->
+                <h1 class="hero-title">Meet Your Hosts</h1> <!-- the biggest title of the page -->
+            </div> <!-- end of the hero content -->
+        </section> <!-- end of the hero section -->
+
+        <!-- intro section, the title and the short paragraph about us -->
+        <section class="about-intro-container"> <!-- the whole intro part -->
+            <div class="intro-header-block"> <!-- box for the title and the line under it -->
+                <h2 class="section-main-title">Three People, One Warm Welcome</h2> <!-- title of the intro -->
+                <div class="title-divider"></div> <!-- the line under the title -->
+            </div> <!-- end of the title box -->
+            <p class="intro-text"> <!-- the intro paragraph -->
+                Managed with care by our family, MFC Units started in 2015 to provide a comfortable, clean, and convenient home away from home in Quezon City. As a family-run space, we take personal pride in ensuring our tenants feel safe, well-assisted, and genuinely welcomed. <!-- tells the story of how MFC Units started -->
+            </p> <!-- end of the intro paragraph -->
+        </section> <!-- end of the intro section -->
+
+        <!-- profiles section, the 3 cards of the owner, daughter and mother -->
+        <section class="profiles-container"> <!-- the whole profiles part -->
+            <div class="profiles-grid"> <!-- grid that puts the 3 cards side by side -->
+
+                <!-- profile 1, the owner -->
+                <article class="profile-card"> <!-- article is a card that can stand alone, this is the owner's card -->
+                    <div class="profile-img-wrapper"> <!-- the frame around the picture (border and rounded corners are here) -->
+                        <img src="images/host-owner.png" alt="Meet the Owner" class="profile-img"> <!-- the owner's picture -->
+                    </div> <!-- end of the picture frame -->
+                    <div class="profile-content"> <!-- box for the title, line and description -->
+                        <h3 class="profile-title">Meet the Owner!</h3> <!-- card title -->
+                        <div class="profile-line"></div> <!-- the small line under the title -->
+                        <p class="profile-desc"> <!-- the description of the owner -->
+                            Managing primary logistics, inquiries, and tenancy arrangements to ensure clear communication and a smooth stay. <!-- what the owner does -->
+                        </p> <!-- end of the description -->
+                    </div> <!-- end of the card content -->
+                </article> <!-- end of the owner's card -->
+
+                <!-- profile 2, the daughter -->
+                <article class="profile-card"> <!-- the daughter's card -->
+                    <div class="profile-img-wrapper"> <!-- the frame around the picture -->
+                        <img src="images/host-daughter.png" alt="Meet the Owner's Daughter" class="profile-img"> <!-- the daughter's picture -->
+                    </div> <!-- end of the picture frame -->
+                    <div class="profile-content"> <!-- box for the title, line and description -->
+                        <h3 class="profile-title">Meet the Owner's Daughter!</h3> <!-- card title -->
+                        <div class="profile-line"></div> <!-- the small line under the title -->
+                        <p class="profile-desc"> <!-- the description of the daughter -->
+                            A BSIT Web Development student who created this digital guide to ensure tenants have 24/7 access to essential unit information. <!-- what the daughter does -->
+                        </p> <!-- end of the description -->
+                    </div> <!-- end of the card content -->
+                </article> <!-- end of the daughter's card -->
+
+                <!-- profile 3, the mother -->
+                <article class="profile-card"> <!-- the mother's card -->
+                    <div class="profile-img-wrapper"> <!-- the frame around the picture -->
+                        <img src="images/host-mother.png" alt="Meet the Owner's Mother" class="profile-img"> <!-- the mother's picture -->
+                    </div> <!-- end of the picture frame -->
+                    <div class="profile-content"> <!-- box for the title, line and description -->
+                        <h3 class="profile-title">Meet the Owner's Mother!</h3> <!-- card title -->
+                        <div class="profile-line"></div> <!-- the small line under the title -->
+                        <p class="profile-desc"> <!-- the description of the mother -->
+                            Bringing years of home-making care, she ensures our unit maintains a high standard of cleanliness, comfort, and hospitality. <!-- what the mother does -->
+                        </p> <!-- end of the description -->
+                    </div> <!-- end of the card content -->
+                </article> <!-- end of the mother's card -->
+
+            </div> <!-- end of the profiles grid -->
+        </section> <!-- end of the profiles section -->
+
+        <!-- settle in section, the green banner with the buttons at the bottom -->
+        <div class="settle-wrapper"> <!-- outer box that controls the width of the banner -->
+            <section class="settle-banner"> <!-- the green box itself -->
+                <div class="settle-inner"> <!-- inner box that holds the text and the buttons -->
+                    <div class="settle-content-col"> <!-- box for the title and the paragraph -->
+                        <h2 class="settle-title">Let's help you settle in.</h2> <!-- title of the banner -->
+                        <p class="settle-text"> <!-- paragraph of the banner -->
+                            Take a look around the unit first to get familiar with your space, then keep our guidelines and FAQs close for all the everyday details! <!-- tells the tenants what to do first -->
+                        </p> <!-- end of the paragraph -->
+                    </div> <!-- end of the title and paragraph box -->
+                    <div class="settle-buttons"> <!-- box that holds the 4 buttons -->
+                        <a href="unit.html" class="settle-btn">Explore Unit</a> <!-- button to the unit page -->
+                        <a href="location.html" class="settle-btn">Check Location</a> <!-- button to the location page -->
+                        <a href="guidelines.html" class="settle-btn">View Guidelines</a> <!-- button to the guidelines page -->
+                        <a href="faqs.html" class="settle-btn">FAQs</a> <!-- button to the FAQs page -->
+                    </div> <!-- end of the buttons box -->
+                </div> <!-- end of the inner box -->
+            </section> <!-- end of the green box -->
+        </div> <!-- end of the outer box -->
+    </main> <!-- end of the main content -->
+
+    <!-- footer (the bottom part of every page) -->
+    <footer class="site-footer"> <!-- the bottom area of the website -->
+        <div class="footer-top-divider"></div> <!-- the line on top of the footer -->
+        <div class="footer-container"> <!-- box that holds the 3 columns of the footer -->
+            <div class="footer-column left"> <!-- left column -->
+                <h3 class="footer-heading">DISCLAIMER</h3> <!-- left column title -->
+                <p class="footer-text"> <!-- left column text -->
+                    Created and developed by a 3rd-Year BSIT Web Development student as an informational guide for our family's condo unit. <!-- says who made the website -->
+                </p> <!-- end of left text -->
+            </div> <!-- end of left column -->
+
+            <div class="footer-logo-col"> <!-- middle column for the logo -->
+                <img src="images/mfc-logo-footer.png" alt="MFC Units Footer Logo" class="footer-logo"> <!-- the logo picture in the footer -->
+            </div> <!-- end of middle column -->
+
+            <div class="footer-column right"> <!-- right column -->
+                <h3 class="footer-heading">CONTACT US</h3> <!-- right column title -->
+                <p class="footer-text"> <!-- right column text -->
+                    For security and privacy, direct contact details and inquiries are shared exclusively through our official Facebook Messenger tenant group chat. <!-- explains where to contact us -->
+                </p> <!-- end of right text -->
+            </div> <!-- end of right column -->
+        </div> <!-- end of the footer columns box -->
+
+        <div class="footer-mid-divider"></div> <!-- the line between the columns and the copyright -->
+
+        <div class="footer-copyright"> <!-- box for the copyright text -->
+            <p class="copyright-text"> <!-- the copyright text -->
+                &copy; 2026 MFC Units. All photos, logos, and content created and owned by Franchesca Zyreen Sison. All rights reserved. <!-- &copy; shows the © symbol -->
+            </p> <!-- end of the copyright text -->
+        </div> <!-- end of the copyright box -->
+    </footer> <!-- end of the footer -->
+
+    <!-- javascript file, placed at the bottom so the page loads first before the js runs -->
+    <script src="script.js"></script> <!-- connects script.js (hamburger menu, etc.) -->
+</body> <!-- end of the body -->
+</html> <!-- end of the whole page -->
